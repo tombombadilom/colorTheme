@@ -1,4 +1,3 @@
-import React from "react";
 import { generatePalette } from 'utility-color-palette-generator';
 
 

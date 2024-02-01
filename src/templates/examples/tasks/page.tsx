@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { z } from "zod"
 
 import { columns } from "./components/columns"
@@ -9,8 +9,7 @@ import data from "./data/tasks.json"
 
 
 const TasksPage = () => {
-  const [tasks, setTasks] = useState(null)
-
+  const [tasks, setTasks] = useState<{ id: string; title: string; status: string; label: string; priority: string; }[]>([]);
   useEffect(() => {
     const getTasks = async () => {
       const tasks = JSON.parse(data.toString())
