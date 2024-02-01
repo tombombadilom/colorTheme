@@ -102,6 +102,7 @@ type BackgroundCanvasProps = {
     height: '100%',
     zIndex: -1,
     backgroundColor: 'var(--background)',
+    opacity: 1,
   };
 };
 

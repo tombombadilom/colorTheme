@@ -11,7 +11,7 @@ function App() {
     <ErrorBoundary>
         <Suspense fallback={loading()}>
           <ThemeProvider defaultTheme={"dark"} storageKey={"vite-ui-theme"}>
-          <Canvas defaultBackground={"background circles"} />
+            <Canvas defaultBackground={"background circles"} />
             <Routes />
           </ThemeProvider>
         </Suspense>

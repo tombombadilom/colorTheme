@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, CSSProperties } from "react";
 type CanvasBackgroundProps = {
   style?: CSSProperties | {
     position: 'fixed',

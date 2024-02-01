@@ -17,6 +17,11 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "../components/ui/drawer"
+import { 
+  Tabs, 
+  TabsContent, 
+  TabsList, 
+  TabsTrigger } from "../components/ui/tabs"
 
 import {lazy} from "react"
 import { Menu, Palette } from 'lucide-react';
@@ -54,20 +59,50 @@ const MySheet: React.FC<SheetProps> = ({ children }) => {
           {children}
         </div>
         <DrawerContent>
-          <DrawerHeader>
-            <DrawerTitle>Set your first 3 primary colors</DrawerTitle>
-            <DrawerDescription
-              className="w-full flex flex-row p-2 gap-2 m-auto  flex-wrap content-start items-center justify-normal  min-h-[10dvh] rounded-xl "
-            >
-              <Colors />
-            </DrawerDescription>
-          </DrawerHeader>
-          <DrawerFooter>
-            <Button>Save Theme</Button>
-            <DrawerClose>
-              <Button variant="outline">Cancel</Button>
-            </DrawerClose>
-          </DrawerFooter>
+          <Tabs defaultValue="background" className="w-screen">
+            <TabsList className="w-screen flex-grow-0">
+              <TabsTrigger value="background">Background</TabsTrigger>
+              <TabsTrigger value="colors">Colors</TabsTrigger>
+            </TabsList>
+            <TabsContent value="backgrounds" className="w-screen">
+              <DrawerHeader className="w-screen min-h-[40dvh]">
+                <DrawerTitle>Set your animated background</DrawerTitle>
+                <DrawerDescription
+                  className="w-full flex flex-row p-2 gap-2 m-auto  flex-wrap content-start items-center justify-normal  min-h-[40dvh] rounded-xl "
+                >
+                  <div
+                  className="w-screen min-h-[40dvh]"
+                  >
+                    blah
+                  </div>
+                </DrawerDescription>
+              </DrawerHeader>
+              <DrawerFooter>
+                <Button>Save Background</Button>
+                <DrawerClose>
+                  <Button variant="outline">Cancel</Button>
+                </DrawerClose>
+              </DrawerFooter>
+            </TabsContent>
+            <TabsContent value="colors" >
+              <DrawerHeader className="w-screen min-h-[40dvh]">
+                <DrawerTitle>Set your first 3 primary colors</DrawerTitle>
+                <DrawerDescription
+                  className="w-full flex flex-row p-2 gap-2 m-auto  flex-wrap content-start items-center justify-normal  min-h-[20dvh] rounded-xl "
+                >
+                  <Colors />
+                </DrawerDescription>
+              </DrawerHeader>
+              <DrawerFooter>
+                <Button>Save Theme</Button>
+                <DrawerClose>
+                  <Button variant="outline">Cancel</Button>
+                </DrawerClose>
+              </DrawerFooter>
+            </TabsContent>
+          </Tabs>
+
+          
         </DrawerContent>
       </Drawer>
       <SheetContent 

@@ -1,4 +1,4 @@
-import { useEffect, useState, FunctionComponent } from "react";
+import { useEffect, useState, FunctionComponent, CSSProperties } from "react";
 import { index } from "./index.ts"
 
 function useLocalStorage(key: string, initialValue: number) {
@@ -25,30 +25,43 @@ function useLocalStorage(key: string, initialValue: number) {
 type CanvasProps = {
   defaultBackground?: string;
 }
-const Canvas = ({ defaultBackground }): CanvasProps => {
-  const initialValue: number = defaultBackground ? index?.find((b) => (b?.name === defaultBackground))[0]?.index : 0;
+const Canvas: FunctionComponent<CanvasProps> = ({ defaultBackground }) => {
+
+  const initialValue: number = defaultBackground ? index?.find((b) => (b?.name === defaultBackground))?.index ?? 0 : 0;
   const [background, setBackground] = useLocalStorage('background', initialValue);
 
 
   // on background change set background in localStorage
   useEffect(() => {
     setBackground(background);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [background]);
-
-  const BackgroundComponent: FunctionComponent = index[background].el;
-
+  type BackgroundComponent = FunctionComponent<{ 
+    style?: CSSProperties | {
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      zIndex: 0,
+      backgroundColor: 'var(--background)',
+      opacity: 1,
+    } 
+  }>
+  const BackgroundComponent: BackgroundComponent = index[background]?.el;
+  const style: CSSProperties = {
+    position: 'absolute', 
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    zIndex: -1,
+    backgroundColor: "hsla(var(--background), 0.25)",
+    opacity: 1,
+  };
   return (
     <BackgroundComponent
-      style={{
-        position: 'fixed', 
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        zIndex: -1,
-        backgroundColor: 'var(--background)',
-        opacity: 1,
-      }}
+      style={style}
     />
   )
 }
