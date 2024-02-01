@@ -10,6 +10,6 @@ export type indexProps = {
 }[];
 
 export const index: indexProps = [
-  { 'index': 0, 'name': 'colored particules', 'src': 'CanvasBackgroud', 'el': CanvasBackground },
-  { 'index': 1, 'name': 'background cirlcles', 'src': 'BackgroundCanvas', 'el': BackgroundCanvas },
+  { index: 0, name: 'colored particules', src: 'CanvasBackgroud', el: CanvasBackground },
+  { index: 1, name: 'background circles', src: 'BackgroundCanvas', el: BackgroundCanvas },
 ];
