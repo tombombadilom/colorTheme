@@ -1,6 +1,6 @@
 const Loading = () => {
   return (
-    <div className="flex w-screen h-screen justify-center items-center text-center text-primary-foreground bg-primarey dark:bg-primary dark:text-primary-foreground ">
+    <div className="flex w-screen h-screen justify-center items-center text-center text-primary-foreground bg-primary bg-opacity-10 dark:bg-primary dark:bg-opacity-10 dark:text-primary-foreground ">
       <div className='loading'>
         {/* SVG path to display a loading animation */}
         <svg
