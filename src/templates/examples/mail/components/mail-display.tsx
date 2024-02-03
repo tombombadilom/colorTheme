@@ -1,9 +1,4 @@
-import {
-  format,
-  addDays,
-  addHours,
-  nextSaturday
-} from "date-fns"
+import { format, addDays, addHours, nextSaturday } from "date-fns";
 import {
   Archive,
   ArchiveX,
@@ -13,45 +8,45 @@ import {
   Reply,
   ReplyAll,
   Trash2,
-} from "lucide-react"
+} from "lucide-react";
 
 import {
   DropdownMenuContent,
   DropdownMenuItem,
-} from "../../../../components/ui/dropdown-menu"
+} from "../../../../components/ui/dropdown-menu";
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "../../../../components/ui/avatar"
-import { Button } from "../../../../components/ui/button"
-import { Calendar } from "../../../../components/ui/calendar"
+} from "../../../../components/ui/avatar";
+import { Button } from "../../../../components/ui/button";
+import { Calendar } from "../../../../components/ui/calendar";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
-} from "../../../../components/ui/dropdown-menu"
-import { Label } from "../../../../components/ui/label"
+} from "../../../../components/ui/dropdown-menu";
+import { Label } from "../../../../components/ui/label";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "../../../../components/ui/popover"
-import { Separator } from "../../../../components/ui/separator"
-import { Switch } from "../../../../components/ui/switch"
-import { Textarea } from "../../../../components/ui/textarea"
+} from "../../../../components/ui/popover";
+import { Separator } from "../../../../components/ui/separator";
+import { Switch } from "../../../../components/ui/switch";
+import { Textarea } from "../../../../components/ui/textarea";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "../../../../components/ui/tooltip"
-import { Mail } from "../data"
+} from "../../../../components/ui/tooltip";
+import { Mail } from "../data";
 
 interface MailDisplayProps {
-  mail: Mail | null
+  mail: Mail | null;
 }
 
 export function MailDisplay({ mail }: MailDisplayProps) {
-  const today = new Date()
+  const today = new Date();
 
   return (
     <div className="flex h-full flex-col">
@@ -256,5 +251,5 @@ export function MailDisplay({ mail }: MailDisplayProps) {
         </div>
       )}
     </div>
-  )
+  );
 }

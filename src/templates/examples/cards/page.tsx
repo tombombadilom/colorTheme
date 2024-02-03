@@ -1,16 +1,15 @@
-import React from 'react'
-import { cn } from "../../../lib/utils"
+import React from "react";
+import { cn } from "../../../lib/utils";
 
-import { DemoCookieSettings } from "./components/cookie-settings"
-import { DemoCreateAccount } from "./components/create-account"
-import { DemoDatePicker } from "./components/date-picker"
-import { DemoGithub } from "./components/github-card"
-import { DemoNotifications } from "./components/notifications"
-import { DemoPaymentMethod } from "./components/payment-method"
-import { DemoReportAnIssue } from "./components/report-an-issue"
-import { DemoShareDocument } from "./components/share-document"
-import { DemoTeamMembers } from "./components/team-members"
-
+import { DemoCookieSettings } from "./components/cookie-settings";
+import { DemoCreateAccount } from "./components/create-account";
+import { DemoDatePicker } from "./components/date-picker";
+import { DemoGithub } from "./components/github-card";
+import { DemoNotifications } from "./components/notifications";
+import { DemoPaymentMethod } from "./components/payment-method";
+import { DemoReportAnIssue } from "./components/report-an-issue";
+import { DemoShareDocument } from "./components/share-document";
+import { DemoTeamMembers } from "./components/team-members";
 
 function DemoContainer({
   className,
@@ -20,11 +19,11 @@ function DemoContainer({
     <div
       className={cn(
         "flex items-center justify-center [&>div]:w-full",
-        className
+        className,
       )}
       {...props}
     />
-  )
+  );
 }
 
 export default function CardsPage() {
@@ -82,5 +81,5 @@ export default function CardsPage() {
         </div>
       </div>
     </>
-  )
+  );
 }

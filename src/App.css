@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   :root {
     --background: 210, 20%, 25%;
@@ -39,7 +39,7 @@
     --drawer-width: 40vw;
     --drawer-width-mobile: 90vw;
   }
- 
+
   .dark {
     --background: 210, 30%, 10%;
     --foreground: 210, 10%, 90%;

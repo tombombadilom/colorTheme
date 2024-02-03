@@ -1,25 +1,25 @@
-import React from "react"
-import { Link , useLocation} from "react-router-dom"
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
 
-import { cn } from "../../../../lib/utils"
-import { buttonVariants } from "@/components/ui/variant-button"
+import { cn } from "../../../../lib/utils";
+import { buttonVariants } from "@/components/ui/variant-button";
 
 interface SidebarNavProps extends React.HTMLAttributes<HTMLElement> {
   items: {
-    href: string
-    title: string
-  }[]
+    href: string;
+    title: string;
+  }[];
 }
 
 function SidebarNav({ className, items, ...props }: SidebarNavProps) {
-   const location = useLocation()
+  const location = useLocation();
   const pathname = location.pathname;
 
   return (
     <nav
       className={cn(
         "flex space-x-2 lg:flex-col lg:space-x-0 lg:space-y-1",
-        className
+        className,
       )}
       {...props}
     >
@@ -32,13 +32,13 @@ function SidebarNav({ className, items, ...props }: SidebarNavProps) {
             pathname === item.href
               ? "bg-muted hover:bg-muted"
               : "hover:bg-transparent hover:underline",
-            "justify-start"
+            "justify-start",
           )}
         >
           {item.title}
         </Link>
       ))}
     </nav>
-  )
+  );
 }
-export default SidebarNav
+export default SidebarNav;

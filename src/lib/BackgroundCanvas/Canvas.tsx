@@ -1,5 +1,5 @@
 import { useEffect, useState, FunctionComponent, CSSProperties } from "react";
-import { index } from "./index.ts"
+import { index } from "./index.ts";
 
 function useLocalStorage(key: string, initialValue: number) {
   const [storedValue, setStoredValue] = useState(() => {
@@ -23,46 +23,47 @@ function useLocalStorage(key: string, initialValue: number) {
 }
 type CanvasProps = {
   defaultBackground?: string;
-}
+};
 const Canvas: FunctionComponent<CanvasProps> = ({ defaultBackground }) => {
-
-  const initialValue: number = defaultBackground ? index?.find((b) => (b?.name === defaultBackground))?.index ?? 0 : 0;
-  const [background, setBackground] = useLocalStorage('background', initialValue);
-
+  const initialValue: number = defaultBackground
+    ? index?.find((b) => b?.name === defaultBackground)?.index ?? 0
+    : 0;
+  const [background, setBackground] = useLocalStorage(
+    "background",
+    initialValue,
+  );
 
   // on background change set background in localStorage
   useEffect(() => {
     setBackground(background);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [background]);
-  
-  type BackgroundComponent = FunctionComponent<{ 
-    style?: CSSProperties | {
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      width: '100%',
-      height: '100%',
-      zIndex: 0,
-      backgroundColor: 'var(--background)',
-      opacity: 1,
-    } 
+
+  type BackgroundComponent = FunctionComponent<{
+    style?:
+      | CSSProperties
+      | {
+          position: "fixed";
+          top: 0;
+          left: 0;
+          width: "100%";
+          height: "100%";
+          zIndex: 0;
+          backgroundColor: "var(--background)";
+          opacity: 1;
+        };
   }>;
   const BackgroundComponent: BackgroundComponent = index[background]?.el;
   const style: CSSProperties = {
-    position: 'absolute', 
+    position: "absolute",
     top: 0,
     left: 0,
-    width: '100%',
-    height: '100%',
+    width: "100%",
+    height: "100%",
     zIndex: -1,
     backgroundColor: "hsla(var(--background), 0.25)",
     opacity: 1,
   };
-  return background === -1 ? null : (
-    <BackgroundComponent
-      style={style}
-    />
-  )
-}
+  return background === -1 ? null : <BackgroundComponent style={style} />;
+};
 export default Canvas;

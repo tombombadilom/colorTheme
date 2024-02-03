@@ -1,17 +1,17 @@
-import React from 'react'
-import { DialogProps } from "@radix-ui/react-alert-dialog"
+import React from "react";
+import { DialogProps } from "@radix-ui/react-alert-dialog";
 import {
   CircleIcon,
   FileIcon,
   LaptopIcon,
   MoonIcon,
   SunIcon,
-} from "@radix-ui/react-icons"
-import { useTheme } from "../../lib/ThemeProvider"
-import {useNavigate} from 'react-router-dom'
-import { docsConfig } from '../examples/config/docs'
-import { cn } from "../../lib/utils"
-import { Button } from "../../components/ui/button"
+} from "@radix-ui/react-icons";
+import { useTheme } from "../../lib/ThemeProvider";
+import { useNavigate } from "react-router-dom";
+import { docsConfig } from "../examples/config/docs";
+import { cn } from "../../lib/utils";
+import { Button } from "../../components/ui/button";
 import {
   CommandDialog,
   CommandEmpty,
@@ -20,12 +20,12 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-} from "../../components/ui/command"
+} from "../../components/ui/command";
 
 export function CommandMenu({ ...props }: DialogProps) {
   const navigate = useNavigate();
-  const [open, setOpen] = React.useState(false)
-  const { setTheme } = useTheme()
+  const [open, setOpen] = React.useState(false);
+  const { setTheme } = useTheme();
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -36,29 +36,29 @@ export function CommandMenu({ ...props }: DialogProps) {
           e.target instanceof HTMLTextAreaElement ||
           e.target instanceof HTMLSelectElement
         ) {
-          return
+          return;
         }
 
-        e.preventDefault()
-        setOpen((open) => !open)
+        e.preventDefault();
+        setOpen((open) => !open);
       }
-    }
+    };
 
-    document.addEventListener("keydown", down)
-    return () => document.removeEventListener("keydown", down)
-  }, [])
+    document.addEventListener("keydown", down);
+    return () => document.removeEventListener("keydown", down);
+  }, []);
 
   const runCommand = React.useCallback((command: () => unknown) => {
-    setOpen(false)
-    command()
-  }, [])
+    setOpen(false);
+    command();
+  }, []);
 
   return (
     <>
       <Button
         variant="outline"
         className={cn(
-          "relative h-8 w-full justify-start rounded-[0.5rem] bg-background text-sm font-normal text-muted-foreground shadow-none sm:pr-12 md:w-40 lg:w-64"
+          "relative h-8 w-full justify-start rounded-[0.5rem] bg-background text-sm font-normal text-muted-foreground shadow-none sm:pr-12 md:w-40 lg:w-64",
         )}
         onClick={() => setOpen(true)}
         {...props}
@@ -81,7 +81,7 @@ export function CommandMenu({ ...props }: DialogProps) {
                   key={navItem.href}
                   value={navItem.title}
                   onSelect={() => {
-                    runCommand(() => navigate(navItem.href as string))
+                    runCommand(() => navigate(navItem.href as string));
                   }}
                 >
                   <FileIcon className="mr-2 h-4 w-4" />
@@ -96,7 +96,7 @@ export function CommandMenu({ ...props }: DialogProps) {
                   key={navItem.href}
                   value={navItem.title}
                   onSelect={() => {
-                    runCommand(() => navigate(navItem.href as string))
+                    runCommand(() => navigate(navItem.href as string));
                   }}
                 >
                   <div className="mr-2 flex h-4 w-4 items-center justify-center">
@@ -125,5 +125,5 @@ export function CommandMenu({ ...props }: DialogProps) {
         </CommandList>
       </CommandDialog>
     </>
-  )
+  );
 }

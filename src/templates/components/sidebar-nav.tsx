@@ -1,16 +1,16 @@
-import { Link, useLocation } from "react-router-dom"
-import { cn } from "../../lib/utils"
+import { Link, useLocation } from "react-router-dom";
+import { cn } from "../../lib/utils";
 
 interface SidebarNavItem {
-  title: string
-  href: string
-  disabled: boolean
-  external: string
-  label: string
-  items?: SidebarNavItem[]
+  title: string;
+  href: string;
+  disabled: boolean;
+  external: string;
+  label: string;
+  items?: SidebarNavItem[];
 }
 export interface DocsSidebarNavProps {
-  items: SidebarNavItem[]
+  items: SidebarNavItem[];
 }
 
 export function DocsSidebarNav({ items }: DocsSidebarNavProps) {
@@ -30,12 +30,12 @@ export function DocsSidebarNav({ items }: DocsSidebarNavProps) {
         </div>
       ))}
     </div>
-  ) : null
+  ) : null;
 }
 
 interface DocsSidebarNavItemsProps {
-  items: SidebarNavItem[]
-  pathname: string | null
+  items: SidebarNavItem[];
+  pathname: string | null;
 }
 
 export function DocsSidebarNavItems({
@@ -54,7 +54,7 @@ export function DocsSidebarNavItems({
               item.disabled && "cursor-not-allowed opacity-60",
               pathname === item.href
                 ? "font-medium text-foreground"
-                : "text-muted-foreground"
+                : "text-muted-foreground",
             )}
             target={item.external ? "_blank" : ""}
             rel={item.external ? "noreferrer" : ""}
@@ -71,7 +71,7 @@ export function DocsSidebarNavItems({
             key={index}
             className={cn(
               "flex w-full cursor-not-allowed items-center rounded-md p-2 text-muted-foreground hover:underline",
-              item.disabled && "cursor-not-allowed opacity-60"
+              item.disabled && "cursor-not-allowed opacity-60",
             )}
           >
             {item.title}
@@ -81,8 +81,8 @@ export function DocsSidebarNavItems({
               </span>
             )}
           </span>
-        )
+        ),
       )}
     </div>
-  ) : null
+  ) : null;
 }

@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from "react";
 
 type ErrorBoundaryState = {
   hasError: boolean;
@@ -9,7 +9,10 @@ type ErrorBoundaryProps = {
   children: ReactNode;
 };
 
-class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
+class ErrorBoundary extends React.Component<
+  ErrorBoundaryProps,
+  ErrorBoundaryState
+> {
   state: ErrorBoundaryState = {
     hasError: false,
     error: null,

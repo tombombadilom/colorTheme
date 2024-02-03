@@ -1,17 +1,17 @@
-import React from 'react'
-import { cn } from "../../lib/utils"
-import { Announcement } from "../components/announcement"
-import { ExamplesNav } from "../components/examples-nav"
+import React from "react";
+import { cn } from "../../lib/utils";
+import { Announcement } from "../components/announcement";
+import { ExamplesNav } from "../components/examples-nav";
 import {
   PageActions,
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
-} from "../components/page-header"
-import { buttonVariants } from "../../components/ui/variant-button"
-import {Link} from "react-router-dom"
+} from "../components/page-header";
+import { buttonVariants } from "../../components/ui/variant-button";
+import { Link } from "react-router-dom";
 interface ExamplesLayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export default function ExamplesLayout({ children }: ExamplesLayoutProps) {
@@ -29,17 +29,14 @@ export default function ExamplesLayout({ children }: ExamplesLayoutProps) {
             components. Use this as a guide to build your own.
           </PageHeaderDescription>
           <PageActions>
-            <Link
-              to="/docs"
-              className={cn(buttonVariants(), "rounded-[6px]")}
-            >
+            <Link to="/docs" className={cn(buttonVariants(), "rounded-[6px]")}>
               Get Started
             </Link>
             <Link
               to="/components"
               className={cn(
                 buttonVariants({ variant: "outline" }),
-                "rounded-[6px]"
+                "rounded-[6px]",
               )}
             >
               Components
@@ -54,5 +51,5 @@ export default function ExamplesLayout({ children }: ExamplesLayoutProps) {
         </section>
       </div>
     </>
-  )
+  );
 }

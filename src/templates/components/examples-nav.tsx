@@ -1,9 +1,9 @@
-import React from 'react'
-import { Link, useNavigate, useLocation } from 'react-router-dom'
-import { ArrowRightIcon } from "@radix-ui/react-icons"
+import React from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { ArrowRightIcon } from "@radix-ui/react-icons";
 
-import { cn } from "../../lib/utils"
-import { ScrollArea, ScrollBar } from '../../components/ui/scroll-area'
+import { cn } from "../../lib/utils";
+import { ScrollArea, ScrollBar } from "../../components/ui/scroll-area";
 
 const examples = [
   {
@@ -46,7 +46,7 @@ const examples = [
     href: "/authentication",
     code: "https://github.com/shadcn/ui/tree/main/apps/www/app/authentication",
   },
-]
+];
 
 interface ExamplesNavProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -68,7 +68,7 @@ export function ExamplesNav({ className, ...props }: ExamplesNavProps) {
                 pathname?.startsWith(example.href) ||
                   (index === 0 && pathname === "/")
                   ? "bg-muted font-medium text-primary"
-                  : "text-muted-foreground"
+                  : "text-muted-foreground",
               )}
             >
               {example.name}
@@ -78,18 +78,20 @@ export function ExamplesNav({ className, ...props }: ExamplesNavProps) {
         <ScrollBar orientation="horizontal" className="invisible" />
       </ScrollArea>
     </div>
-  )
+  );
 }
 
 interface ExampleCodeLinkProps {
-  pathname: string | null
+  pathname: string | null;
 }
 
 export function ExampleCodeLink({ pathname }: ExampleCodeLinkProps) {
-  const example = examples.find((example) => pathname?.startsWith(example.href))
+  const example = examples.find((example) =>
+    pathname?.startsWith(example.href),
+  );
 
   if (!example?.code) {
-    return null
+    return null;
   }
 
   return (
@@ -102,5 +104,5 @@ export function ExampleCodeLink({ pathname }: ExampleCodeLinkProps) {
       View code
       <ArrowRightIcon className="ml-1 h-4 w-4" />
     </Link>
-  )
+  );
 }

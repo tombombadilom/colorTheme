@@ -1,18 +1,24 @@
-import { useEffect, useState } from 'react';
-import { z } from "zod"
+import { useEffect, useState } from "react";
+import { z } from "zod";
 
-import { columns } from "./components/columns"
-import { DataTable } from "./components/data-table"
-import { UserNav } from "./components/user-nav"
-import { taskSchema } from "./data/schema"
-import data from "./data/tasks.json"
-
+import { columns } from "./components/columns";
+import { DataTable } from "./components/data-table";
+import { UserNav } from "./components/user-nav";
+import { taskSchema } from "./data/schema";
+import data from "./data/tasks.json";
 
 const TasksPage = () => {
-  const [tasks, setTasks] = useState<{ id: string; title: string; status: string; label: string; priority: string; }[]>([]);
+  const [tasks, setTasks] = useState<
+    {
+      id: string;
+      title: string;
+      status: string;
+      label: string;
+      priority: string;
+    }[]
+  >([]);
   useEffect(() => {
     const getTasks = async () => {
- 
       //const tasks = JSON.parse(data.toString());
       setTasks(z.array(taskSchema).parse(data));
     };
@@ -52,7 +58,9 @@ const TasksPage = () => {
         <DataTable data={tasks} columns={columns} />
       </div>
     </>
-  ) : 'loading ...'
+  ) : (
+    "loading ..."
+  );
 };
 
 export default TasksPage;

@@ -1,5 +1,4 @@
-
-import React from 'react'
+import React from "react";
 import {
   AlertCircle,
   Archive,
@@ -12,36 +11,40 @@ import {
   ShoppingCart,
   Trash2,
   Users2,
-} from "lucide-react"
+} from "lucide-react";
 
-import { AccountSwitcher } from "./account-switcher"
-import { MailDisplay } from "./mail-display"
-import { MailList } from "./mail-list"
-import { Nav } from "./nav"
-import { Mail } from "../data"
-import { useMail } from "../use-mail"
-import { cn } from "../../../../lib/utils"
-import { Separator } from "../../../../components/ui/separator"
-import { Input } from "../../../../components/ui/input"
+import { AccountSwitcher } from "./account-switcher";
+import { MailDisplay } from "./mail-display";
+import { MailList } from "./mail-list";
+import { Nav } from "./nav";
+import { Mail } from "../data";
+import { useMail } from "../use-mail";
+import { cn } from "../../../../lib/utils";
+import { Separator } from "../../../../components/ui/separator";
+import { Input } from "../../../../components/ui/input";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "../../../../components/ui/tabs"
-import { TooltipProvider } from "../../../../components/ui/tooltip"
-import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "../../../../components/ui/resizable"
+} from "../../../../components/ui/tabs";
+import { TooltipProvider } from "../../../../components/ui/tooltip";
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "../../../../components/ui/resizable";
 
 interface MailProps {
   accounts: {
-    label: string
-    email: string
-    icon: React.ReactNode
-  }[]
-  mails: Mail[]
-  defaultLayout: number[] | undefined
-  defaultCollapsed?: boolean
-  navCollapsedSize: number
+    label: string;
+    email: string;
+    icon: React.ReactNode;
+  }[];
+  mails: Mail[];
+  defaultLayout: number[] | undefined;
+  defaultCollapsed?: boolean;
+  navCollapsedSize: number;
 }
 
 const MailComponent: React.FC<MailProps> = ({
@@ -51,17 +54,18 @@ const MailComponent: React.FC<MailProps> = ({
   defaultCollapsed = false,
   navCollapsedSize,
 }: MailProps) => {
-  const [isCollapsed, setIsCollapsed] = React.useState(defaultCollapsed)
-  const [mail] = useMail()
-  
+  const [isCollapsed, setIsCollapsed] = React.useState(defaultCollapsed);
+  const [mail] = useMail();
+
   return (
     <TooltipProvider delayDuration={0}>
       <ResizablePanelGroup
         direction="horizontal"
         onLayout={(sizes: number[]) => {
-          localStorage.setItem('react-resizable-panels:layout',`${JSON.stringify(
-            sizes
-          )}`)
+          localStorage.setItem(
+            "react-resizable-panels:layout",
+            `${JSON.stringify(sizes)}`,
+          );
         }}
         className="h-full max-h-[800px] items-stretch"
       >
@@ -73,11 +77,22 @@ const MailComponent: React.FC<MailProps> = ({
           maxSize={20}
           onCollapse={() => {
             setIsCollapsed(!isCollapsed);
-            localStorage.setItem('react-resizable-panels:collapsed', JSON.stringify(isCollapsed));
+            localStorage.setItem(
+              "react-resizable-panels:collapsed",
+              JSON.stringify(isCollapsed),
+            );
           }}
-          className={cn(isCollapsed && "min-w-[50px] transition-all duration-300 ease-in-out")}
+          className={cn(
+            isCollapsed &&
+              "min-w-[50px] transition-all duration-300 ease-in-out",
+          )}
         >
-          <div className={cn("flex h-[52px] items-center justify-center", isCollapsed ? 'h-[52px]': 'px-2')}>
+          <div
+            className={cn(
+              "flex h-[52px] items-center justify-center",
+              isCollapsed ? "h-[52px]" : "px-2",
+            )}
+          >
             <AccountSwitcher isCollapsed={isCollapsed} accounts={accounts} />
           </div>
           <Separator />
@@ -165,8 +180,18 @@ const MailComponent: React.FC<MailProps> = ({
             <div className="flex items-center px-4 py-2">
               <h1 className="text-xl font-bold">Inbox</h1>
               <TabsList className="ml-auto">
-                <TabsTrigger value="all" className="text-zinc-600 dark:text-zinc-200">All mail</TabsTrigger>
-                <TabsTrigger value="unread" className="text-zinc-600 dark:text-zinc-200">Unread</TabsTrigger>
+                <TabsTrigger
+                  value="all"
+                  className="text-zinc-600 dark:text-zinc-200"
+                >
+                  All mail
+                </TabsTrigger>
+                <TabsTrigger
+                  value="unread"
+                  className="text-zinc-600 dark:text-zinc-200"
+                >
+                  Unread
+                </TabsTrigger>
               </TabsList>
             </div>
             <Separator />
@@ -194,6 +219,6 @@ const MailComponent: React.FC<MailProps> = ({
         </ResizablePanel>
       </ResizablePanelGroup>
     </TooltipProvider>
-  )
-}
-export default MailComponent
+  );
+};
+export default MailComponent;

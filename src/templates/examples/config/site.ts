@@ -8,6 +8,6 @@ export const siteConfig = {
     twitter: "https://twitter.com/shadcn",
     github: "https://github.com/shadcn-ui/ui",
   },
-}
+};
 
-export type SiteConfig = typeof siteConfig
+export type SiteConfig = typeof siteConfig;

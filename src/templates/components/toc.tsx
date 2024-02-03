@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-import { TableOfContents } from "../../lib/toc"
-import { cn } from "../../lib/utils"
-import { useMounted } from "../examples/hooks/use-mounted"
+import { TableOfContents } from "../../lib/toc";
+import { cn } from "../../lib/utils";
+import { useMounted } from "../examples/hooks/use-mounted";
 
 interface TocProps {
-  toc: TableOfContents
+  toc: TableOfContents;
 }
 
 export function DashboardTableOfContents({ toc }: TocProps) {
@@ -13,68 +13,73 @@ export function DashboardTableOfContents({ toc }: TocProps) {
     () =>
       toc.items
         ? toc.items
-          .flatMap((item) => [item.url, item?.items?.map((item) => item.url)])
-          .flat()
-          .filter(Boolean)
-          .map((id) => id?.split("#")[1])
+            .flatMap((item) => [item.url, item?.items?.map((item) => item.url)])
+            .flat()
+            .filter(Boolean)
+            .map((id) => id?.split("#")[1])
         : [],
-    [toc]
+    [toc],
   );
-  const filteredItemIds = itemIds.filter((id): id is string => typeof id === 'string');
-  const activeHeading = useActiveItem(filteredItemIds)
-  const mounted = useMounted()
+  const filteredItemIds = itemIds.filter(
+    (id): id is string => typeof id === "string",
+  );
+  const activeHeading = useActiveItem(filteredItemIds);
+  const mounted = useMounted();
 
   if (!toc?.items || !mounted) {
-    return null
+    return null;
   }
 
   return (
     <div className="space-y-2">
       <p className="font-medium">On This Page</p>
-      <Tree tree={toc} activeItem={activeHeading ? `#${activeHeading}` : undefined} />
+      <Tree
+        tree={toc}
+        activeItem={activeHeading ? `#${activeHeading}` : undefined}
+      />
     </div>
-  )
+  );
 }
 
 function useActiveItem(itemIds: string[]) {
-  const [activeId, setActiveId] = React.useState<string | null>(null)
+  const [activeId, setActiveId] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveId(entry.target.id)
+            setActiveId(entry.target.id);
           }
-        })
+        });
       },
-      { rootMargin: `0% 0% -80% 0%` }
-    )
+      { rootMargin: `0% 0% -80% 0%` },
+    );
 
     itemIds?.forEach((id) => {
-      const element = document.getElementById(id)
+      const element = document.getElementById(id);
       if (element) {
-        observer.observe(element)
+        observer.observe(element);
       }
-    })
+    });
 
     return () => {
       itemIds?.forEach((id) => {
-        const element = document.getElementById(id)
+        const element = document.getElementById(id);
         if (element) {
-          observer.unobserve(element)
+          observer.unobserve(element);
         }
-      })
-    }
-  }, [itemIds])
+      });
+    };
+  }, [itemIds]);
 
-  return activeId
+  return activeId;
 }
 
 interface TreeProps {
-  tree: TableOfContents
-  level?: number
-  activeItem?: string
+  tree: TableOfContents;
+  level?: number;
+  activeItem?: string;
 }
 
 function Tree({ tree, level = 1, activeItem }: TreeProps) {
@@ -89,7 +94,7 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
                 "inline-block no-underline transition-colors hover:text-foreground",
                 item.url === `#${activeItem}`
                   ? "font-medium text-foreground"
-                  : "text-muted-foreground"
+                  : "text-muted-foreground",
               )}
             >
               {item.title}
@@ -98,8 +103,8 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
               <Tree tree={item} level={level + 1} activeItem={activeItem} />
             ) : null}
           </li>
-        )
+        );
       })}
     </ul>
-  ) : null
+  ) : null;
 }

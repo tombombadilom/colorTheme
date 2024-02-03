@@ -1,7 +1,7 @@
-import React from "react"
-import {Link} from "react-router-dom"
+import React from "react";
+import { Link } from "react-router-dom";
 
-import { cn } from "../../../../lib/utils"
+import { cn } from "../../../../lib/utils";
 
 export function MainNav({
   className,
@@ -37,5 +37,5 @@ export function MainNav({
         Settings
       </Link>
     </nav>
-  )
+  );
 }

@@ -3,8 +3,8 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
-import { Link , useNavigate} from "react-router-dom";
+} from "@/components/ui/navigation-menu";
+import { Link, useNavigate } from "react-router-dom";
 interface Link {
   name: string;
   link: string;
@@ -13,40 +13,40 @@ interface Link {
 const links: Link[] = [
   {
     name: "Home",
-    link: "/"
+    link: "/",
   },
   {
     name: "Mail",
-    link: "/Mail"
+    link: "/Mail",
   },
   {
     name: "Dashboard",
-    link: "/Dashboard"
+    link: "/Dashboard",
   },
   {
     name: "Cards",
-    link: "/Cards"
+    link: "/Cards",
   },
   {
     name: "Tasks",
-    link: "/Tasks"
+    link: "/Tasks",
   },
   {
     name: "Playground",
-    link: "/Playground"
+    link: "/Playground",
   },
   {
     name: "Forms",
-    link: "/Forms"
+    link: "/Forms",
   },
   {
     name: "Music",
-    link: "/Music"
+    link: "/Music",
   },
   {
     name: "Authentication",
-    link: "/Authentication"
-  }
+    link: "/Authentication",
+  },
 ];
 
 /**
@@ -56,23 +56,30 @@ const links: Link[] = [
  */
 const Menu = (): ReactElement => (
   <div className="flex flex-col space-y-3">
-    {links.map((l: Link, index: number): ReactElement => (
-      <a key={"m"+index} href={l.link}>{l.name}</a>
-    ))}
+    {links.map(
+      (l: Link, index: number): ReactElement => (
+        <a key={"m" + index} href={l.link}>
+          {l.name}
+        </a>
+      ),
+    )}
   </div>
 );
-export const TopMenu = () =>{
+export const TopMenu = () => {
   const navigate = useNavigate();
-  return  (
-  links.map((l: Link, index: number): ReactElement => (
-    <NavigationMenuItem
-      key={"m"+index }
-    >
-      <NavigationMenuLink key={"l" + index} onClick={() => navigate(l.link)} className={navigationMenuTriggerStyle()}>
+  return links.map(
+    (l: Link, index: number): ReactElement => (
+      <NavigationMenuItem key={"m" + index}>
+        <NavigationMenuLink
+          key={"l" + index}
+          onClick={() => navigate(l.link)}
+          className={navigationMenuTriggerStyle()}
+        >
           {l.name}
-      </NavigationMenuLink>
-    </NavigationMenuItem>
-  ))
-)};
+        </NavigationMenuLink>
+      </NavigationMenuItem>
+    ),
+  );
+};
 
 export default Menu;

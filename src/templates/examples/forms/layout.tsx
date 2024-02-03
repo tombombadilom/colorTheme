@@ -1,6 +1,6 @@
-import React from "react"
-import { Separator } from "../../../components/ui/separator"
-import  SidebarNav  from "./components/sidebar-nav"
+import React from "react";
+import { Separator } from "../../../components/ui/separator";
+import SidebarNav from "./components/sidebar-nav";
 
 const sidebarNavItems = [
   {
@@ -23,10 +23,10 @@ const sidebarNavItems = [
     title: "Display",
     href: "/examples/forms/display",
   },
-]
+];
 
 interface SettingsLayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export default function SettingsLayout({ children }: SettingsLayoutProps) {
@@ -64,5 +64,5 @@ export default function SettingsLayout({ children }: SettingsLayoutProps) {
         </div>
       </div>
     </>
-  )
+  );
 }

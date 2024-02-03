@@ -1,8 +1,7 @@
-import { Link, useLocation } from "react-router-dom"
-import { siteConfig } from "../examples/config/site"
-import { cn } from "../../lib/utils"
-import { Icons } from "./icons"
-
+import { Link, useLocation } from "react-router-dom";
+import { siteConfig } from "../examples/config/site";
+import { cn } from "../../lib/utils";
+import { Icons } from "./icons";
 
 export function MainNav() {
   const location = useLocation();
@@ -21,7 +20,7 @@ export function MainNav() {
           to="/docs"
           className={cn(
             "transition-colors hover:text-foreground/80",
-            pathname === "/docs" ? "text-foreground" : "text-foreground/60"
+            pathname === "/docs" ? "text-foreground" : "text-foreground/60",
           )}
         >
           Docs
@@ -32,7 +31,7 @@ export function MainNav() {
             "transition-colors hover:text-foreground/80",
             pathname?.startsWith("/docs/components")
               ? "text-foreground"
-              : "text-foreground/60"
+              : "text-foreground/60",
           )}
         >
           Components
@@ -43,7 +42,7 @@ export function MainNav() {
             "transition-colors hover:text-foreground/80",
             pathname?.startsWith("/themes")
               ? "text-foreground"
-              : "text-foreground/60"
+              : "text-foreground/60",
           )}
         >
           Themes
@@ -54,7 +53,7 @@ export function MainNav() {
             "transition-colors hover:text-foreground/80",
             pathname?.startsWith("/examples")
               ? "text-foreground"
-              : "text-foreground/60"
+              : "text-foreground/60",
           )}
         >
           Examples
@@ -62,12 +61,12 @@ export function MainNav() {
         <Link
           to={siteConfig.links.github}
           className={cn(
-            "hidden text-foreground/60 transition-colors hover:text-foreground/80 lg:block"
+            "hidden text-foreground/60 transition-colors hover:text-foreground/80 lg:block",
           )}
         >
           GitHub
         </Link>
       </nav>
     </div>
-  )
+  );
 }

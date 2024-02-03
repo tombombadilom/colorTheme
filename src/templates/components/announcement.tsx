@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom'
-import { ArrowRightIcon } from "@radix-ui/react-icons"
+import { Link } from "react-router-dom";
+import { ArrowRightIcon } from "@radix-ui/react-icons";
 
-import { Separator } from "../../components/ui/separator"
+import { Separator } from "../../components/ui/separator";
 
 export function Announcement() {
   return (
@@ -16,5 +16,5 @@ export function Announcement() {
       </span>
       <ArrowRightIcon className="ml-1 h-4 w-4" />
     </Link>
-  )
+  );
 }

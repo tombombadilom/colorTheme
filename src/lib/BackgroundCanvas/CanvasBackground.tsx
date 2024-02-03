@@ -1,16 +1,18 @@
 import React, { useEffect, useRef, CSSProperties } from "react";
 type CanvasBackgroundProps = {
-  style?: CSSProperties | {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    zIndex: -1,
-    backgroundColor: 'var(--background)',
-  };
+  style?:
+    | CSSProperties
+    | {
+        position: "fixed";
+        top: 0;
+        left: 0;
+        width: "100%";
+        height: "100%";
+        zIndex: -1;
+        backgroundColor: "var(--background)";
+      };
 };
-const CanvasBackground: React.FC<CanvasBackgroundProps> = ({style}) => {
+const CanvasBackground: React.FC<CanvasBackgroundProps> = ({ style }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mouseRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
 
@@ -53,63 +55,66 @@ const CanvasBackground: React.FC<CanvasBackgroundProps> = ({style}) => {
       }
     }
 
-   function particles() {
-     ctx?.clearRect(0, 0, w, h);
-     for (let i = 0; i < arc; i++) {
-       const li = parts[i];
-       const distanceFactor = DistanceBetween(mouseRef.current, parts[i]);
-       const distanceFactorClamped = Math.max(
-         Math.min(15 - distanceFactor / 10, 10),
-         1
-       );
-   
-       ctx?.beginPath();
-       ctx?.arc(
-         li.x,
-         li.y,
-         li.size * distanceFactorClamped,
-         0,
-         Math.PI * 2,
-         false
-       );
-       if (ctx) {
-         ctx.fillStyle = li.c;
-         ctx.strokeStyle = li.c;
-         if (i % 2 === 0) {
-           ctx.stroke();
-         } else {
-           ctx.fill();
-         }
-       }
-   
-       li.x = li.x + li.toX * (time * 0.05);
-       li.y = li.y + li.toY * (time * 0.05);
-   
-       if (li.x > w) {
-         li.x = 0;
-       }
-       if (li.y > h) {
-         li.y = 0;
-       }
-       if (li.x < 0) {
-         li.x = w;
-       }
-       if (li.y < 0) {
-         li.y = h;
-       }
-     }
-   
-     if (time < speed) {
-       time++;
-     }
-   
-     setTimeout(particles, 1000 / rate);
-   }
+    function particles() {
+      ctx?.clearRect(0, 0, w, h);
+      for (let i = 0; i < arc; i++) {
+        const li = parts[i];
+        const distanceFactor = DistanceBetween(mouseRef.current, parts[i]);
+        const distanceFactorClamped = Math.max(
+          Math.min(15 - distanceFactor / 10, 10),
+          1,
+        );
+
+        ctx?.beginPath();
+        ctx?.arc(
+          li.x,
+          li.y,
+          li.size * distanceFactorClamped,
+          0,
+          Math.PI * 2,
+          false,
+        );
+        if (ctx) {
+          ctx.fillStyle = li.c;
+          ctx.strokeStyle = li.c;
+          if (i % 2 === 0) {
+            ctx.stroke();
+          } else {
+            ctx.fill();
+          }
+        }
+
+        li.x = li.x + li.toX * (time * 0.05);
+        li.y = li.y + li.toY * (time * 0.05);
+
+        if (li.x > w) {
+          li.x = 0;
+        }
+        if (li.y > h) {
+          li.y = 0;
+        }
+        if (li.x < 0) {
+          li.x = w;
+        }
+        if (li.y < 0) {
+          li.y = h;
+        }
+      }
+
+      if (time < speed) {
+        time++;
+      }
+
+      setTimeout(particles, 1000 / rate);
+    }
     function handleMouseMove(e: MouseEvent) {
       mouseRef.current = { x: e.clientX, y: e.clientY };
     }
 
-    function DistanceBetween(p1: { x: number; y: number }, p2: { x: number; y: number }) {
+    function DistanceBetween(
+      p1: { x: number; y: number },
+      p2: { x: number; y: number },
+    ) {
       const dx = p2.x - p1.x;
       const dy = p2.y - p1.y;
       return Math.sqrt(dx * dx + dy * dy);
@@ -121,18 +126,12 @@ const CanvasBackground: React.FC<CanvasBackgroundProps> = ({style}) => {
 
     canvas.addEventListener("mousemove", handleMouseMove);
 
-
     return () => {
       canvas.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
-  return (
-    <canvas
-      ref={canvasRef}
-      style={style}
-     />
-   );
- };
- 
- export default CanvasBackground;    
+  return <canvas ref={canvasRef} style={style} />;
+};
+
+export default CanvasBackground;

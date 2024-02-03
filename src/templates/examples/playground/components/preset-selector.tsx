@@ -1,32 +1,32 @@
-import React from 'react'
-import { useNavigate } from "react-router-dom"
-import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons"
-import { PopoverProps } from "@radix-ui/react-popover"
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
+import { PopoverProps } from "@radix-ui/react-popover";
 
-import { cn } from "../../../../lib/utils"
-import { Button } from "../../../../components/ui/button"
+import { cn } from "../../../../lib/utils";
+import { Button } from "../../../../components/ui/button";
 import {
   Command,
   CommandEmpty,
   CommandGroup,
   CommandInput,
   CommandItem,
-} from "../../../../components/ui/command"
+} from "../../../../components/ui/command";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "../../../../components/ui/popover"
+} from "../../../../components/ui/popover";
 
-import { Preset } from "../data/presets"
+import { Preset } from "../data/presets";
 
 interface PresetSelectorProps extends PopoverProps {
-  presets: Preset[]
+  presets: Preset[];
 }
 
 export function PresetSelector({ presets, ...props }: PresetSelectorProps) {
-  const [open, setOpen] = React.useState(false)
-  const [selectedPreset, setSelectedPreset] = React.useState<Preset>()
+  const [open, setOpen] = React.useState(false);
+  const [selectedPreset, setSelectedPreset] = React.useState<Preset>();
   const navigate = useNavigate();
 
   return (
@@ -52,8 +52,8 @@ export function PresetSelector({ presets, ...props }: PresetSelectorProps) {
               <CommandItem
                 key={preset.id}
                 onSelect={() => {
-                  setSelectedPreset(preset)
-                  setOpen(false)
+                  setSelectedPreset(preset);
+                  setOpen(false);
                 }}
               >
                 {preset.name}
@@ -62,7 +62,7 @@ export function PresetSelector({ presets, ...props }: PresetSelectorProps) {
                     "ml-auto h-4 w-4",
                     selectedPreset?.id === preset.id
                       ? "opacity-100"
-                      : "opacity-0"
+                      : "opacity-0",
                   )}
                 />
               </CommandItem>
@@ -76,5 +76,5 @@ export function PresetSelector({ presets, ...props }: PresetSelectorProps) {
         </Command>
       </PopoverContent>
     </Popover>
-  )
+  );
 }

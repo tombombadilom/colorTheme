@@ -6,7 +6,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "../components/ui/sheet"
+} from "../components/ui/sheet";
 import {
   Drawer,
   DrawerClose,
@@ -16,18 +16,19 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "../components/ui/drawer"
-import { 
-  Tabs, 
-  TabsContent, 
-  TabsList, 
-  TabsTrigger } from "../components/ui/tabs"
+} from "../components/ui/drawer";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../components/ui/tabs";
 
-import {lazy} from "react"
-import { Menu, Palette } from 'lucide-react';
-import SideMenu from './Menu';
+import { lazy } from "react";
+import { Menu, Palette } from "lucide-react";
+import SideMenu from "./Menu";
 import Header from "./Header";
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 const Colors = lazy(() => import("../lib/Colors"));
 /**
  * Renders the logo component.
@@ -41,9 +42,9 @@ type SheetProps = {
 const MySheet: React.FC<SheetProps> = ({ children }) => {
   const [sheetOpen, setSheetOpen] = useState<boolean>(false);
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
-  const side = 'left';
+  const side = "left";
   return (
-    <Sheet 
+    <Sheet
       open={sheetOpen}
       onOpenChange={() => {
         setSheetOpen(!sheetOpen);
@@ -58,19 +59,18 @@ const MySheet: React.FC<SheetProps> = ({ children }) => {
           setDrawerOpen?.(!drawerOpen);
         }}
       >
-        <Header colorTheme={<DrawerTrigger><Palette/></DrawerTrigger>}>
-          <SheetTrigger
-            className="w-12 h-12 bg-transparent  rounded-lg p-1 focus:bg-opacity-60 active:bg-opacity-75 dark:bg-transparent dark:bg-opacity-10 dark:hover:bg-opacity-60 dark:focus:bg-opacity-60 dark:active:bg-opacity-75"
-          >
-            <Menu
-              className="w-full h-full bg-opacity-light text-nav-foreground dark:bg-opacity-light dark:text-nav-foreground backdrop-filter backdrop-blur-lg rounded-md "
-            />
-          </SheetTrigger>
-          
-        </Header>
-        <div
-          className="flex flex-col items-center justify-center min-h-[90dvh] overflow-y-auto text-align-center"
+        <Header
+          colorTheme={
+            <DrawerTrigger>
+              <Palette />
+            </DrawerTrigger>
+          }
         >
+          <SheetTrigger className="w-12 h-12 bg-transparent  rounded-lg p-1 focus:bg-opacity-60 active:bg-opacity-75 dark:bg-transparent dark:bg-opacity-10 dark:hover:bg-opacity-60 dark:focus:bg-opacity-60 dark:active:bg-opacity-75">
+            <Menu className="w-full h-full bg-opacity-light text-nav-foreground dark:bg-opacity-light dark:text-nav-foreground backdrop-filter backdrop-blur-lg rounded-md " />
+          </SheetTrigger>
+        </Header>
+        <div className="flex flex-col items-center justify-center min-h-[90dvh] overflow-y-auto text-align-center">
           {children}
         </div>
         <DrawerContent>
@@ -82,14 +82,8 @@ const MySheet: React.FC<SheetProps> = ({ children }) => {
             <TabsContent value="backgrounds" className="w-screen">
               <DrawerHeader className="w-screen min-h-[40dvh]">
                 <DrawerTitle>Set your animated background</DrawerTitle>
-                <DrawerDescription
-                  className="w-full flex flex-row p-2 gap-2 m-auto  flex-wrap content-start items-center justify-normal  min-h-[40dvh] rounded-xl "
-                >
-                  <div
-                  className="w-screen min-h-[40dvh]"
-                  >
-                    blah
-                  </div>
+                <DrawerDescription className="w-full flex flex-row p-2 gap-2 m-auto  flex-wrap content-start items-center justify-normal  min-h-[40dvh] rounded-xl ">
+                  <div className="w-screen min-h-[40dvh]">blah</div>
                 </DrawerDescription>
               </DrawerHeader>
               <DrawerFooter>
@@ -99,12 +93,10 @@ const MySheet: React.FC<SheetProps> = ({ children }) => {
                 </DrawerClose>
               </DrawerFooter>
             </TabsContent>
-            <TabsContent value="colors" >
+            <TabsContent value="colors">
               <DrawerHeader className="w-screen min-h-[40dvh]">
                 <DrawerTitle>Set your first 3 primary colors</DrawerTitle>
-                <DrawerDescription
-                  className="w-full flex flex-row p-2 gap-2 m-auto  flex-wrap content-start items-center justify-normal  min-h-[20dvh] rounded-xl "
-                >
+                <DrawerDescription className="w-full flex flex-row p-2 gap-2 m-auto  flex-wrap content-start items-center justify-normal  min-h-[20dvh] rounded-xl ">
                   <Colors />
                 </DrawerDescription>
               </DrawerHeader>
@@ -116,21 +108,26 @@ const MySheet: React.FC<SheetProps> = ({ children }) => {
               </DrawerFooter>
             </TabsContent>
           </Tabs>
-
-          
         </DrawerContent>
       </Drawer>
-      <SheetContent 
-        side={side} 
+      <SheetContent
+        side={side}
         className="w-drawerWidth bg-background bg-opacity-light text-nav-foreground dark:bg-background dark:bg-opacity-light dark:text-nav-foreground"
       >
         <SheetHeader>
           <SheetTitle>
-            <img src="/icon/mstile-150x150.png" alt="Helia IPFS CMS" className="mx-auto h-[150px] md:h-[100px]" />
-            <p className="mt-6 text-center text-1xl  text-gray-300">ColorTheme</p>
+            <img
+              src="/icon/mstile-150x150.png"
+              alt="Helia IPFS CMS"
+              className="mx-auto h-[150px] md:h-[100px]"
+            />
+            <p className="mt-6 text-center text-1xl  text-gray-300">
+              ColorTheme
+            </p>
           </SheetTitle>
           <SheetDescription>
-            <div data-radix-scroll-area-viewport=""
+            <div
+              data-radix-scroll-area-viewport=""
               className="h-full w-full rounded-[inherit]"
             >
               <div className="table">
