@@ -8,12 +8,7 @@ import {
   calculateHarmoniousColors,
 } from "./ColorsTools";
 
-import {
-  Card,
-  CardTitle,
-  CardContent,
-  CardFooter,
-} from "../components/ui/card";
+import { Card, CardTitle, CardContent, CardFooter } from "../components/ui/card";
 import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
 
@@ -31,11 +26,7 @@ type Props = {
  * @param {Function} handleNewColor - The function to handle saving the new color.
  * @return {JSX.Element} The color picker component.
  */
-const PickColor: FC<Props> = ({
-  color,
-  index,
-  handleNewColor,
-}: Props): JSX.Element => {
+const PickColor: FC<Props> = ({ color, index, handleNewColor }: Props): JSX.Element => {
   const [show, toggleShow] = useState(false);
   const [hue, setHue] = useState<number>(color.h);
   const [saturation, setSaturation] = useState<number>(color.s);
@@ -93,7 +84,7 @@ const PickColor: FC<Props> = ({
                 l: lightness,
                 a: alpha,
               }}
-              onChange={(newColor) =>
+              onChange={newColor =>
                 NewColor({
                   h: newColor.h,
                   s: newColor.s,
@@ -112,7 +103,7 @@ const PickColor: FC<Props> = ({
             <Input
               placeholder="hsla(240, 100%, 50%, 1)"
               defaultValue={hslaColor}
-              onChange={(e) => setHslaColor(e.currentTarget.value)}
+              onChange={e => setHslaColor(e.currentTarget.value)}
             />
             <Input
               placeholder="Hue"
@@ -232,7 +223,7 @@ const Colors: FC = (): JSX.Element => {
    * @param {HandleNewColor} color - the new color to be handled
    * @return {void}
    */
-  const handleNewColor: HandleNewColor = (color) => {
+  const handleNewColor: HandleNewColor = color => {
     const { name, h, s, l, a, value } = color;
     const newColorsArray: CalculatedColor[] = colors.map(
       ({ name: colorName, h, s, l, a, value }) => ({
@@ -247,7 +238,7 @@ const Colors: FC = (): JSX.Element => {
     );
 
     const colorName = guessColorCategory(value);
-    const colorIndex = newColorsArray.findIndex((color) => color.name === name);
+    const colorIndex = newColorsArray.findIndex(color => color.name === name);
 
     if (colorIndex !== -1) {
       newColorsArray[colorIndex] = {
@@ -280,13 +271,7 @@ const Colors: FC = (): JSX.Element => {
     }
   };
 
-  return (
-    <>
-      {colors.map((color, index) =>
-        PickColor({ color, index, handleNewColor }),
-      )}
-    </>
-  );
+  return <>{colors.map((color, index) => PickColor({ color, index, handleNewColor }))}</>;
 };
 
 export default Colors;

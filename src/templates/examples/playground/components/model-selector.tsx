@@ -19,11 +19,7 @@ import {
   HoverCardTrigger,
 } from "../../../../components/ui/hover-card";
 import { Label } from "../../../../components/ui/label";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "../../../../components/ui/popover";
+import { Popover, PopoverContent, PopoverTrigger } from "../../../../components/ui/popover";
 
 import { Model, ModelType } from "../data/models";
 
@@ -43,13 +39,9 @@ export function ModelSelector({ models, types, ...props }: ModelSelectorProps) {
         <HoverCardTrigger asChild>
           <Label htmlFor="model">Model</Label>
         </HoverCardTrigger>
-        <HoverCardContent
-          align="start"
-          className="w-[260px] text-sm"
-          side="left"
-        >
-          The model which will generate the completion. Some models are suitable
-          for natural language tasks, others specialize in code. Learn more.
+        <HoverCardContent align="start" className="w-[260px] text-sm" side="left">
+          The model which will generate the completion. Some models are suitable for natural
+          language tasks, others specialize in code. Learn more.
         </HoverCardContent>
       </HoverCard>
       <Popover open={open} onOpenChange={setOpen} {...props}>
@@ -67,25 +59,14 @@ export function ModelSelector({ models, types, ...props }: ModelSelectorProps) {
         </PopoverTrigger>
         <PopoverContent align="end" className="w-[250px] p-0">
           <HoverCard>
-            <HoverCardContent
-              side="left"
-              align="start"
-              forceMount
-              className="min-h-[280px]"
-            >
+            <HoverCardContent side="left" align="start" forceMount className="min-h-[280px]">
               <div className="grid gap-2">
                 <h4 className="font-medium leading-none">{peekedModel.name}</h4>
-                <div className="text-sm text-muted-foreground">
-                  {peekedModel.description}
-                </div>
+                <div className="text-sm text-muted-foreground">{peekedModel.description}</div>
                 {peekedModel.strengths ? (
                   <div className="mt-4 grid gap-2">
-                    <h5 className="text-sm font-medium leading-none">
-                      Strengths
-                    </h5>
-                    <ul className="text-sm text-muted-foreground">
-                      {peekedModel.strengths}
-                    </ul>
+                    <h5 className="text-sm font-medium leading-none">Strengths</h5>
+                    <ul className="text-sm text-muted-foreground">{peekedModel.strengths}</ul>
                   </div>
                 ) : null}
               </div>
@@ -95,16 +76,16 @@ export function ModelSelector({ models, types, ...props }: ModelSelectorProps) {
                 <CommandInput placeholder="Search Models..." />
                 <CommandEmpty>No Models found.</CommandEmpty>
                 <HoverCardTrigger />
-                {types.map((type) => (
+                {types.map(type => (
                   <CommandGroup key={type} heading={type}>
                     {models
-                      .filter((model) => model.type === type)
-                      .map((model) => (
+                      .filter(model => model.type === type)
+                      .map(model => (
                         <ModelItem
                           key={model.id}
                           model={model}
                           isSelected={selectedModel?.id === model.id}
-                          onPeek={(model) => setPeekedModel(model)}
+                          onPeek={model => setPeekedModel(model)}
                           onSelect={() => {
                             setSelectedModel(model);
                             setOpen(false);
@@ -132,7 +113,7 @@ interface ModelItemProps {
 function ModelItem({ model, isSelected, onSelect, onPeek }: ModelItemProps) {
   const ref = React.useRef<HTMLDivElement>(null);
 
-  useMutationObserver(ref, (mutations) => {
+  useMutationObserver(ref, mutations => {
     for (const mutation of mutations) {
       if (mutation.type === "attributes") {
         if (mutation.attributeName === "aria-selected") {
@@ -150,12 +131,7 @@ function ModelItem({ model, isSelected, onSelect, onPeek }: ModelItemProps) {
       className="aria-selected:bg-primary aria-selected:text-primary-foreground"
     >
       {model.name}
-      <CheckIcon
-        className={cn(
-          "ml-auto h-4 w-4",
-          isSelected ? "opacity-100" : "opacity-0",
-        )}
-      />
+      <CheckIcon className={cn("ml-auto h-4 w-4", isSelected ? "opacity-100" : "opacity-0")} />
     </CommandItem>
   );
 }

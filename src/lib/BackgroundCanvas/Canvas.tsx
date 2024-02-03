@@ -26,12 +26,9 @@ type CanvasProps = {
 };
 const Canvas: FunctionComponent<CanvasProps> = ({ defaultBackground }) => {
   const initialValue: number = defaultBackground
-    ? index?.find((b) => b?.name === defaultBackground)?.index ?? 0
+    ? index?.find(b => b?.name === defaultBackground)?.index ?? 0
     : 0;
-  const [background, setBackground] = useLocalStorage(
-    "background",
-    initialValue,
-  );
+  const [background, setBackground] = useLocalStorage("background", initialValue);
 
   // on background change set background in localStorage
   useEffect(() => {

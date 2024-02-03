@@ -38,13 +38,9 @@ export function TopPSelector({ defaultValue }: TopPSelectorProps) {
             />
           </div>
         </HoverCardTrigger>
-        <HoverCardContent
-          align="start"
-          className="w-[260px] text-sm"
-          side="left"
-        >
-          Control diversity via nucleus sampling: 0.5 means half of all
-          likelihood-weighted options are considered.
+        <HoverCardContent align="start" className="w-[260px] text-sm" side="left">
+          Control diversity via nucleus sampling: 0.5 means half of all likelihood-weighted options
+          are considered.
         </HoverCardContent>
       </HoverCard>
     </div>

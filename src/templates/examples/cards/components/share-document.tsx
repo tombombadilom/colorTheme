@@ -1,8 +1,4 @@
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "../../../../components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "../../../../components/ui/avatar";
 import { Button } from "../../../../components/ui/button";
 import {
   Card,
@@ -26,9 +22,7 @@ export function DemoShareDocument() {
     <Card>
       <CardHeader>
         <CardTitle>Share this document</CardTitle>
-        <CardDescription>
-          Anyone with the link can view this document.
-        </CardDescription>
+        <CardDescription>Anyone with the link can view this document.</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="flex space-x-2">
@@ -48,9 +42,7 @@ export function DemoShareDocument() {
                   <AvatarFallback>OM</AvatarFallback>
                 </Avatar>
                 <div>
-                  <p className="text-sm font-medium leading-none">
-                    Olivia Martin
-                  </p>
+                  <p className="text-sm font-medium leading-none">Olivia Martin</p>
                   <p className="text-sm text-muted-foreground">m@example.com</p>
                 </div>
               </div>
@@ -71,9 +63,7 @@ export function DemoShareDocument() {
                   <AvatarFallback>IN</AvatarFallback>
                 </Avatar>
                 <div>
-                  <p className="text-sm font-medium leading-none">
-                    Isabella Nguyen
-                  </p>
+                  <p className="text-sm font-medium leading-none">Isabella Nguyen</p>
                   <p className="text-sm text-muted-foreground">b@example.com</p>
                 </div>
               </div>
@@ -94,9 +84,7 @@ export function DemoShareDocument() {
                   <AvatarFallback>SD</AvatarFallback>
                 </Avatar>
                 <div>
-                  <p className="text-sm font-medium leading-none">
-                    Sofia Davis
-                  </p>
+                  <p className="text-sm font-medium leading-none">Sofia Davis</p>
                   <p className="text-sm text-muted-foreground">p@example.com</p>
                 </div>
               </div>

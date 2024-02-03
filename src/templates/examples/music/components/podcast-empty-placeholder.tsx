@@ -43,9 +43,7 @@ export function PodcastEmptyPlaceholder() {
           <DialogContent>
             <DialogHeader>
               <DialogTitle>Add Podcast</DialogTitle>
-              <DialogDescription>
-                Copy and paste the podcast feed URL to import.
-              </DialogDescription>
+              <DialogDescription>Copy and paste the podcast feed URL to import.</DialogDescription>
             </DialogHeader>
             <div className="grid gap-4 py-4">
               <div className="grid gap-2">

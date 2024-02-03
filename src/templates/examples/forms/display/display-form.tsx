@@ -43,7 +43,7 @@ const items = [
 ] as const;
 
 const displayFormSchema = z.object({
-  items: z.array(z.string()).refine((value) => value.some((item) => item), {
+  items: z.array(z.string()).refine(value => value.some(item => item), {
     message: "You have to select at least one item.",
   }),
 });
@@ -86,7 +86,7 @@ export function DisplayForm() {
                   Select the items you want to display in the sidebar.
                 </FormDescription>
               </div>
-              {items.map((item) => (
+              {items.map(item => (
                 <FormField
                   key={item.id}
                   control={form.control}
@@ -100,20 +100,14 @@ export function DisplayForm() {
                         <FormControl>
                           <Checkbox
                             checked={field.value?.includes(item.id)}
-                            onCheckedChange={(checked) => {
+                            onCheckedChange={checked => {
                               return checked
                                 ? field.onChange([...field.value, item.id])
-                                : field.onChange(
-                                    field.value?.filter(
-                                      (value) => value !== item.id,
-                                    ),
-                                  );
+                                : field.onChange(field.value?.filter(value => value !== item.id));
                             }}
                           />
                         </FormControl>
-                        <FormLabel className="font-normal">
-                          {item.label}
-                        </FormLabel>
+                        <FormLabel className="font-normal">{item.label}</FormLabel>
                       </FormItem>
                     );
                   }}

@@ -13,16 +13,14 @@ export function DashboardTableOfContents({ toc }: TocProps) {
     () =>
       toc.items
         ? toc.items
-            .flatMap((item) => [item.url, item?.items?.map((item) => item.url)])
+            .flatMap(item => [item.url, item?.items?.map(item => item.url)])
             .flat()
             .filter(Boolean)
-            .map((id) => id?.split("#")[1])
+            .map(id => id?.split("#")[1])
         : [],
     [toc],
   );
-  const filteredItemIds = itemIds.filter(
-    (id): id is string => typeof id === "string",
-  );
+  const filteredItemIds = itemIds.filter((id): id is string => typeof id === "string");
   const activeHeading = useActiveItem(filteredItemIds);
   const mounted = useMounted();
 
@@ -33,10 +31,7 @@ export function DashboardTableOfContents({ toc }: TocProps) {
   return (
     <div className="space-y-2">
       <p className="font-medium">On This Page</p>
-      <Tree
-        tree={toc}
-        activeItem={activeHeading ? `#${activeHeading}` : undefined}
-      />
+      <Tree tree={toc} activeItem={activeHeading ? `#${activeHeading}` : undefined} />
     </div>
   );
 }
@@ -46,8 +41,8 @@ function useActiveItem(itemIds: string[]) {
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
+      entries => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
             setActiveId(entry.target.id);
           }
@@ -56,7 +51,7 @@ function useActiveItem(itemIds: string[]) {
       { rootMargin: `0% 0% -80% 0%` },
     );
 
-    itemIds?.forEach((id) => {
+    itemIds?.forEach(id => {
       const element = document.getElementById(id);
       if (element) {
         observer.observe(element);
@@ -64,7 +59,7 @@ function useActiveItem(itemIds: string[]) {
     });
 
     return () => {
-      itemIds?.forEach((id) => {
+      itemIds?.forEach(id => {
         const element = document.getElementById(id);
         if (element) {
           observer.unobserve(element);

@@ -1,9 +1,4 @@
-import {
-  ChevronDownIcon,
-  CircleIcon,
-  PlusIcon,
-  StarIcon,
-} from "@radix-ui/react-icons";
+import { ChevronDownIcon, CircleIcon, PlusIcon, StarIcon } from "@radix-ui/react-icons";
 
 import { Button } from "../../../../components/ui/button";
 import {
@@ -31,8 +26,8 @@ export function DemoGithub() {
         <div className="space-y-1">
           <CardTitle>shadcn/ui</CardTitle>
           <CardDescription>
-            Beautifully designed components that you can copy and paste into
-            your apps. Accessible. Customizable. Open Source.
+            Beautifully designed components that you can copy and paste into your apps. Accessible.
+            Customizable. Open Source.
           </CardDescription>
         </div>
         <div className="flex items-center space-x-1 rounded-md bg-secondary text-secondary-foreground">
@@ -47,17 +42,10 @@ export function DemoGithub() {
                 <ChevronDownIcon className="h-4 w-4 text-secondary-foreground" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent
-              align="end"
-              alignOffset={-5}
-              className="w-[200px]"
-              forceMount
-            >
+            <DropdownMenuContent align="end" alignOffset={-5} className="w-[200px]" forceMount>
               <DropdownMenuLabel>Suggested Lists</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuCheckboxItem checked>
-                Future Ideas
-              </DropdownMenuCheckboxItem>
+              <DropdownMenuCheckboxItem checked>Future Ideas</DropdownMenuCheckboxItem>
               <DropdownMenuCheckboxItem>My Stack</DropdownMenuCheckboxItem>
               <DropdownMenuCheckboxItem>Inspiration</DropdownMenuCheckboxItem>
               <DropdownMenuSeparator />

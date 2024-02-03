@@ -3,4 +3,5 @@ dist/
 **/*.frag
 **/*.vert
 **/*.glsl
-
+**/*.gitignore
+**/*.git

@@ -2,12 +2,7 @@ const Loading = () => {
   return (
     <div className="flex w-screen h-screen justify-center items-center text-center text-primary-foreground bg-primary bg-opacity-10 dark:bg-primary dark:bg-opacity-10 dark:text-primary-foreground ">
       <div className="loading">
-        <svg
-          version="1.2"
-          width="600"
-          height="300"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg version="1.2" width="600" height="300" xmlns="http://www.w3.org/2000/svg">
           <path
             id="pulsar"
             stroke="var(--primary-foreground)"

@@ -22,15 +22,7 @@ class Circle {
   counter: number;
   sign: number;
 
-  constructor({
-    radius,
-    speed,
-    size,
-    xPos,
-    yPos,
-    opacity,
-    color,
-  }: CircleProps) {
+  constructor({ radius, speed, size, xPos, yPos, opacity, color }: CircleProps) {
     this.radius = radius;
     this.speed = speed;
     this.size = size;

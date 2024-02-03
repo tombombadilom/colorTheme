@@ -17,12 +17,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "../components/ui/drawer";
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "../components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
 
 import { lazy } from "react";
 import { Menu, Palette } from "lucide-react";
@@ -121,15 +116,10 @@ const MySheet: React.FC<SheetProps> = ({ children }) => {
               alt="Helia IPFS CMS"
               className="mx-auto h-[150px] md:h-[100px]"
             />
-            <p className="mt-6 text-center text-1xl  text-gray-300">
-              ColorTheme
-            </p>
+            <p className="mt-6 text-center text-1xl  text-gray-300">ColorTheme</p>
           </SheetTitle>
           <SheetDescription>
-            <div
-              data-radix-scroll-area-viewport=""
-              className="h-full w-full rounded-[inherit]"
-            >
+            <div data-radix-scroll-area-viewport="" className="h-full w-full rounded-[inherit]">
               <div className="table">
                 <SideMenu />
               </div>

@@ -11,18 +11,9 @@ import { DemoReportAnIssue } from "./components/report-an-issue";
 import { DemoShareDocument } from "./components/share-document";
 import { DemoTeamMembers } from "./components/team-members";
 
-function DemoContainer({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
+function DemoContainer({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div
-      className={cn(
-        "flex items-center justify-center [&>div]:w-full",
-        className,
-      )}
-      {...props}
-    />
+    <div className={cn("flex items-center justify-center [&>div]:w-full", className)} {...props} />
   );
 }
 

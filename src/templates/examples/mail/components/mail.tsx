@@ -22,12 +22,7 @@ import { useMail } from "../use-mail";
 import { cn } from "../../../../lib/utils";
 import { Separator } from "../../../../components/ui/separator";
 import { Input } from "../../../../components/ui/input";
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "../../../../components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../../components/ui/tabs";
 import { TooltipProvider } from "../../../../components/ui/tooltip";
 import {
   ResizableHandle,
@@ -62,10 +57,7 @@ const MailComponent: React.FC<MailProps> = ({
       <ResizablePanelGroup
         direction="horizontal"
         onLayout={(sizes: number[]) => {
-          localStorage.setItem(
-            "react-resizable-panels:layout",
-            `${JSON.stringify(sizes)}`,
-          );
+          localStorage.setItem("react-resizable-panels:layout", `${JSON.stringify(sizes)}`);
         }}
         className="h-full max-h-[800px] items-stretch"
       >
@@ -77,15 +69,9 @@ const MailComponent: React.FC<MailProps> = ({
           maxSize={20}
           onCollapse={() => {
             setIsCollapsed(!isCollapsed);
-            localStorage.setItem(
-              "react-resizable-panels:collapsed",
-              JSON.stringify(isCollapsed),
-            );
+            localStorage.setItem("react-resizable-panels:collapsed", JSON.stringify(isCollapsed));
           }}
-          className={cn(
-            isCollapsed &&
-              "min-w-[50px] transition-all duration-300 ease-in-out",
-          )}
+          className={cn(isCollapsed && "min-w-[50px] transition-all duration-300 ease-in-out")}
         >
           <div
             className={cn(
@@ -180,16 +166,10 @@ const MailComponent: React.FC<MailProps> = ({
             <div className="flex items-center px-4 py-2">
               <h1 className="text-xl font-bold">Inbox</h1>
               <TabsList className="ml-auto">
-                <TabsTrigger
-                  value="all"
-                  className="text-zinc-600 dark:text-zinc-200"
-                >
+                <TabsTrigger value="all" className="text-zinc-600 dark:text-zinc-200">
                   All mail
                 </TabsTrigger>
-                <TabsTrigger
-                  value="unread"
-                  className="text-zinc-600 dark:text-zinc-200"
-                >
+                <TabsTrigger value="unread" className="text-zinc-600 dark:text-zinc-200">
                   Unread
                 </TabsTrigger>
               </TabsList>
@@ -207,15 +187,13 @@ const MailComponent: React.FC<MailProps> = ({
               <MailList items={mails} />
             </TabsContent>
             <TabsContent value="unread" className="m-0">
-              <MailList items={mails.filter((item) => !item.read)} />
+              <MailList items={mails.filter(item => !item.read)} />
             </TabsContent>
           </Tabs>
         </ResizablePanel>
         <ResizableHandle withHandle />
         <ResizablePanel defaultSize={defaultLayout[2]}>
-          <MailDisplay
-            mail={mails.find((item) => item.id === mail.selected) || null}
-          />
+          <MailDisplay mail={mails.find(item => item.id === mail.selected) || null} />
         </ResizablePanel>
       </ResizablePanelGroup>
     </TooltipProvider>

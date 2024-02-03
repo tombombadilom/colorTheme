@@ -21,8 +21,8 @@ export function PresetSave() {
         <DialogHeader>
           <DialogTitle>Save preset</DialogTitle>
           <DialogDescription>
-            This will save the current playground state as a preset which you
-            can access later or share with others.
+            This will save the current playground state as a preset which you can access later or
+            share with others.
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">

@@ -1,11 +1,6 @@
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "../components/ui/tooltip";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../components/ui/tooltip";
 
 import { Toggle } from "../components/ui/toggle";
 

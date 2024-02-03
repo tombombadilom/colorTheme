@@ -18,7 +18,7 @@ export function MailList({ items }: MailListProps) {
   return (
     <ScrollArea className="h-screen">
       <div className="flex flex-col gap-2 p-4 pt-0">
-        {items.map((item) => (
+        {items.map(item => (
           <button
             key={item.id}
             className={cn(
@@ -36,16 +36,12 @@ export function MailList({ items }: MailListProps) {
               <div className="flex items-center">
                 <div className="flex items-center gap-2">
                   <div className="font-semibold">{item.name}</div>
-                  {!item.read && (
-                    <span className="flex h-2 w-2 rounded-full bg-blue-600" />
-                  )}
+                  {!item.read && <span className="flex h-2 w-2 rounded-full bg-blue-600" />}
                 </div>
                 <div
                   className={cn(
                     "ml-auto text-xs",
-                    mail.selected === item.id
-                      ? "text-foreground"
-                      : "text-muted-foreground",
+                    mail.selected === item.id ? "text-foreground" : "text-muted-foreground",
                   )}
                 >
                   {formatDistanceToNow(new Date(item.date), {
@@ -60,7 +56,7 @@ export function MailList({ items }: MailListProps) {
             </div>
             {item.labels.length ? (
               <div className="flex items-center gap-2">
-                {item.labels.map((label) => (
+                {item.labels.map(label => (
                   <Badge key={label} variant={getBadgeVariantFromLabel(label)}>
                     {label}
                   </Badge>
@@ -74,9 +70,7 @@ export function MailList({ items }: MailListProps) {
   );
 }
 
-function getBadgeVariantFromLabel(
-  label: string,
-): ComponentProps<typeof Badge>["variant"] {
+function getBadgeVariantFromLabel(label: string): ComponentProps<typeof Badge>["variant"] {
   if (["work"].includes(label.toLowerCase())) {
     return "default";
   }

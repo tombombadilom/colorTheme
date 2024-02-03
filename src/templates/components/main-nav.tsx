@@ -11,9 +11,7 @@ export function MainNav() {
     <div className="mr-4 hidden md:flex">
       <Link to="/" className="mr-6 flex items-center space-x-2">
         <Icons.logo className="h-6 w-6" />
-        <span className="hidden font-bold sm:inline-block">
-          {siteConfig.name}
-        </span>
+        <span className="hidden font-bold sm:inline-block">{siteConfig.name}</span>
       </Link>
       <nav className="flex items-center gap-6 text-sm">
         <Link
@@ -29,9 +27,7 @@ export function MainNav() {
           to="/docs/components"
           className={cn(
             "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/docs/components")
-              ? "text-foreground"
-              : "text-foreground/60",
+            pathname?.startsWith("/docs/components") ? "text-foreground" : "text-foreground/60",
           )}
         >
           Components
@@ -40,9 +36,7 @@ export function MainNav() {
           to="/themes"
           className={cn(
             "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/themes")
-              ? "text-foreground"
-              : "text-foreground/60",
+            pathname?.startsWith("/themes") ? "text-foreground" : "text-foreground/60",
           )}
         >
           Themes
@@ -51,9 +45,7 @@ export function MainNav() {
           to="/examples"
           className={cn(
             "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/examples")
-              ? "text-foreground"
-              : "text-foreground/60",
+            pathname?.startsWith("/examples") ? "text-foreground" : "text-foreground/60",
           )}
         >
           Examples

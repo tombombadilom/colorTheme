@@ -19,8 +19,7 @@ export type HSLA = {
   value: string;
 };
 
-const adjustHue = (hue: number, adjustment: number): number =>
-  (hue + adjustment) % 360;
+const adjustHue = (hue: number, adjustment: number): number => (hue + adjustment) % 360;
 
 const calculateForegroundColor = (l: number, name: string): CalculatedColor => {
   const newLightness = l > 50 ? l - 40 : l + 40;
@@ -38,10 +37,7 @@ const calculateForegroundColor = (l: number, name: string): CalculatedColor => {
   };
 };
 
-const calculateCardColor = (
-  color: CalculatedColor,
-  name: string,
-): CalculatedColor => {
+const calculateCardColor = (color: CalculatedColor, name: string): CalculatedColor => {
   // Adjust saturation and lightness within their respective bounds
   const newSaturation = Math.max(color.s - 10, 0);
   const newLightness = Math.min(color.l + 10, 100);
@@ -100,13 +96,7 @@ type CalculateHarmoniousColors = (
   name: string,
 ) => CalculatedColor[];
 
-const calculateHarmoniousColors: CalculateHarmoniousColors = (
-  h,
-  s,
-  l,
-  a,
-  name,
-) => {
+const calculateHarmoniousColors: CalculateHarmoniousColors = (h, s, l, a, name) => {
   const colorString = `hsl(${h}, ${s}%, ${l}%)`;
   const colorName = guessColorCategory(colorString); // Now it is called correctly
   const primary: CalculatedColor = {
@@ -125,9 +115,7 @@ const calculateHarmoniousColors: CalculateHarmoniousColors = (
     l,
     a,
     name: "secondary",
-    colorName: guessColorCategory(
-      `hsla(${adjustHue(h, 30)}, ${s}%, ${l}%, ${a})`,
-    ),
+    colorName: guessColorCategory(`hsla(${adjustHue(h, 30)}, ${s}%, ${l}%, ${a})`),
     value: `hsla(${adjustHue(h, 30)}, ${s}%, ${l}%, ${a})`,
   };
 
@@ -137,9 +125,7 @@ const calculateHarmoniousColors: CalculateHarmoniousColors = (
     l,
     a,
     name: "tertiary",
-    colorName: guessColorCategory(
-      `hsla(${adjustHue(h, 60)}, ${s}%, ${l}%, ${a})`,
-    ),
+    colorName: guessColorCategory(`hsla(${adjustHue(h, 60)}, ${s}%, ${l}%, ${a})`),
     value: `hsla(${adjustHue(h, 60)}, ${s}%, ${l}%, ${a})`,
   };
 
@@ -161,9 +147,7 @@ const calculateHarmoniousColors: CalculateHarmoniousColors = (
     l: 40,
     a,
     name: "success",
-    colorName: guessColorCategory(
-      `hsla(${adjustHue(primary.h, 120)}, 70%, 40%, ${a})`,
-    ),
+    colorName: guessColorCategory(`hsla(${adjustHue(primary.h, 120)}, 70%, 40%, ${a})`),
     value: `hsla(${adjustHue(primary.h, 120)}, 70%, 40%, ${a})`,
   };
 
@@ -173,9 +157,7 @@ const calculateHarmoniousColors: CalculateHarmoniousColors = (
     l: 50,
     a,
     name: "error",
-    colorName: guessColorCategory(
-      `hsla(${adjustHue(primary.h, 180)}, 70%, 50%, ${a})`,
-    ),
+    colorName: guessColorCategory(`hsla(${adjustHue(primary.h, 180)}, 70%, 50%, ${a})`),
     value: `hsla(${adjustHue(primary.h, 180)}, 70%, 50%, ${a})`,
   };
 
@@ -193,18 +175,9 @@ const calculateHarmoniousColors: CalculateHarmoniousColors = (
     "tertiary-foreground",
   );
 
-  const cardPrimary: CalculatedColor = calculateCardColor(
-    primary,
-    "primary-card",
-  );
-  const cardSecondary: CalculatedColor = calculateCardColor(
-    secondary,
-    "secondary-card",
-  );
-  const cardTertiary: CalculatedColor = calculateCardColor(
-    tertiary,
-    "tertiary-card",
-  );
+  const cardPrimary: CalculatedColor = calculateCardColor(primary, "primary-card");
+  const cardSecondary: CalculatedColor = calculateCardColor(secondary, "secondary-card");
+  const cardTertiary: CalculatedColor = calculateCardColor(tertiary, "tertiary-card");
 
   const cardPrimaryForeground: CalculatedColor = calculateForegroundColor(
     cardPrimary.l,

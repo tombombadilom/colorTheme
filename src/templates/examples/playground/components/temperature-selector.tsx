@@ -13,9 +13,7 @@ interface TemperatureSelectorProps {
   defaultValue: SliderProps["defaultValue"];
 }
 
-export function TemperatureSelector({
-  defaultValue,
-}: TemperatureSelectorProps) {
+export function TemperatureSelector({ defaultValue }: TemperatureSelectorProps) {
   const [value, setValue] = React.useState(defaultValue);
 
   return (
@@ -40,14 +38,9 @@ export function TemperatureSelector({
             />
           </div>
         </HoverCardTrigger>
-        <HoverCardContent
-          align="start"
-          className="w-[260px] text-sm"
-          side="left"
-        >
-          Controls randomness: lowering results in less random completions. As
-          the temperature approaches zero, the model will become deterministic
-          and repetitive.
+        <HoverCardContent align="start" className="w-[260px] text-sm" side="left">
+          Controls randomness: lowering results in less random completions. As the temperature
+          approaches zero, the model will become deterministic and repetitive.
         </HoverCardContent>
       </HoverCard>
     </div>

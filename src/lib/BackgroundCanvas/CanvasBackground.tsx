@@ -60,20 +60,10 @@ const CanvasBackground: React.FC<CanvasBackgroundProps> = ({ style }) => {
       for (let i = 0; i < arc; i++) {
         const li = parts[i];
         const distanceFactor = DistanceBetween(mouseRef.current, parts[i]);
-        const distanceFactorClamped = Math.max(
-          Math.min(15 - distanceFactor / 10, 10),
-          1,
-        );
+        const distanceFactorClamped = Math.max(Math.min(15 - distanceFactor / 10, 10), 1);
 
         ctx?.beginPath();
-        ctx?.arc(
-          li.x,
-          li.y,
-          li.size * distanceFactorClamped,
-          0,
-          Math.PI * 2,
-          false,
-        );
+        ctx?.arc(li.x, li.y, li.size * distanceFactorClamped, 0, Math.PI * 2, false);
         if (ctx) {
           ctx.fillStyle = li.c;
           ctx.strokeStyle = li.c;
@@ -111,10 +101,7 @@ const CanvasBackground: React.FC<CanvasBackgroundProps> = ({ style }) => {
       mouseRef.current = { x: e.clientX, y: e.clientY };
     }
 
-    function DistanceBetween(
-      p1: { x: number; y: number },
-      p2: { x: number; y: number },
-    ) {
+    function DistanceBetween(p1: { x: number; y: number }, p2: { x: number; y: number }) {
       const dx = p2.x - p1.x;
       const dy = p2.y - p1.y;
       return Math.sqrt(dx * dx + dy * dy);

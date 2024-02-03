@@ -15,17 +15,14 @@ export function DemoCookieSettings() {
     <Card>
       <CardHeader>
         <CardTitle>Cookie Settings</CardTitle>
-        <CardDescription>
-          Manage your LocalStorage settings here.
-        </CardDescription>
+        <CardDescription>Manage your LocalStorage settings here.</CardDescription>
       </CardHeader>
       <CardContent className="grid gap-6">
         <div className="flex items-center justify-between space-x-2">
           <Label htmlFor="necessary" className="flex flex-col space-y-1">
             <span>Strictly Necessary</span>
             <span className="font-normal leading-snug text-muted-foreground">
-              These LocalStorage are essential in order to use the website and
-              use its features.
+              These LocalStorage are essential in order to use the website and use its features.
             </span>
           </Label>
           <Switch id="necessary" defaultChecked />
@@ -34,8 +31,7 @@ export function DemoCookieSettings() {
           <Label htmlFor="functional" className="flex flex-col space-y-1">
             <span>Functional Cookies</span>
             <span className="font-normal leading-snug text-muted-foreground">
-              These LocalStorage allow the website to provide personalized
-              functionality.
+              These LocalStorage allow the website to provide personalized functionality.
             </span>
           </Label>
           <Switch id="functional" />

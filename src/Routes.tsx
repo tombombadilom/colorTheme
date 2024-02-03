@@ -10,9 +10,7 @@ const Tasks = lazy(() => import("./templates/examples/tasks/page"));
 const Playground = lazy(() => import("./templates/examples/playground/page"));
 const Forms = lazy(() => import("./templates/examples/forms/page"));
 const Music = lazy(() => import("./templates/examples/music/page"));
-const Authentication = lazy(
-  () => import("./templates/examples/authentication/page"),
-);
+const Authentication = lazy(() => import("./templates/examples/authentication/page"));
 
 const MyRoutes = () => {
   return (

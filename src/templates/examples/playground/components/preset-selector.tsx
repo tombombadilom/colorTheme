@@ -12,11 +12,7 @@ import {
   CommandInput,
   CommandItem,
 } from "../../../../components/ui/command";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "../../../../components/ui/popover";
+import { Popover, PopoverContent, PopoverTrigger } from "../../../../components/ui/popover";
 
 import { Preset } from "../data/presets";
 
@@ -48,7 +44,7 @@ export function PresetSelector({ presets, ...props }: PresetSelectorProps) {
           <CommandInput placeholder="Search presets..." />
           <CommandEmpty>No presets found.</CommandEmpty>
           <CommandGroup heading="Examples">
-            {presets.map((preset) => (
+            {presets.map(preset => (
               <CommandItem
                 key={preset.id}
                 onSelect={() => {
@@ -60,18 +56,14 @@ export function PresetSelector({ presets, ...props }: PresetSelectorProps) {
                 <CheckIcon
                   className={cn(
                     "ml-auto h-4 w-4",
-                    selectedPreset?.id === preset.id
-                      ? "opacity-100"
-                      : "opacity-0",
+                    selectedPreset?.id === preset.id ? "opacity-100" : "opacity-0",
                   )}
                 />
               </CommandItem>
             ))}
           </CommandGroup>
           <CommandGroup className="pt-0">
-            <CommandItem onSelect={() => navigate("/examples")}>
-              More examples
-            </CommandItem>
+            <CommandItem onSelect={() => navigate("/examples")}>More examples</CommandItem>
           </CommandGroup>
         </Command>
       </PopoverContent>

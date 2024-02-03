@@ -1,12 +1,6 @@
 import React from "react";
 import { DialogProps } from "@radix-ui/react-alert-dialog";
-import {
-  CircleIcon,
-  FileIcon,
-  LaptopIcon,
-  MoonIcon,
-  SunIcon,
-} from "@radix-ui/react-icons";
+import { CircleIcon, FileIcon, LaptopIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "../../lib/ThemeProvider";
 import { useNavigate } from "react-router-dom";
 import { docsConfig } from "../examples/config/docs";
@@ -40,7 +34,7 @@ export function CommandMenu({ ...props }: DialogProps) {
         }
 
         e.preventDefault();
-        setOpen((open) => !open);
+        setOpen(open => !open);
       }
     };
 
@@ -75,8 +69,8 @@ export function CommandMenu({ ...props }: DialogProps) {
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Links">
             {docsConfig.mainNav
-              .filter((navitem) => !navitem.external)
-              .map((navItem) => (
+              .filter(navitem => !navitem.external)
+              .map(navItem => (
                 <CommandItem
                   key={navItem.href}
                   value={navItem.title}
@@ -89,9 +83,9 @@ export function CommandMenu({ ...props }: DialogProps) {
                 </CommandItem>
               ))}
           </CommandGroup>
-          {docsConfig.sidebarNav.map((group) => (
+          {docsConfig.sidebarNav.map(group => (
             <CommandGroup key={group.title} heading={group.title}>
-              {group.items.map((navItem) => (
+              {group.items.map(navItem => (
                 <CommandItem
                   key={navItem.href}
                   value={navItem.title}
