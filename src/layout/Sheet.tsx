@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { useState, ReactNode } from "react";
 import {
   Sheet,
   SheetContent,
@@ -39,10 +39,25 @@ type SheetProps = {
 };
 
 const MySheet: React.FC<SheetProps> = ({ children }) => {
+  const [sheetOpen, setSheetOpen] = useState<boolean>(false);
+  const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
   const side = 'left';
   return (
-    <Sheet key={side}>
-      <Drawer>
+    <Sheet 
+      open={sheetOpen}
+      onOpenChange={() => {
+        setSheetOpen(!sheetOpen);
+        setDrawerOpen?.(!sheetOpen);
+      }}
+      key={side}
+    >
+      <Drawer
+        open={drawerOpen}
+        onOpenChange={() => {
+          setSheetOpen(!sheetOpen);
+          setDrawerOpen?.(!drawerOpen);
+        }}
+      >
         <Header colorTheme={<DrawerTrigger><Palette/></DrawerTrigger>}>
           <SheetTrigger
             className="w-12 h-12 bg-transparent  rounded-lg p-1 focus:bg-opacity-60 active:bg-opacity-75 dark:bg-transparent dark:bg-opacity-10 dark:hover:bg-opacity-60 dark:focus:bg-opacity-60 dark:active:bg-opacity-75"

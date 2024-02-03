@@ -19,7 +19,6 @@ function useLocalStorage(key: string, initialValue: number) {
       console.log(error);
     }
   };
-
   return [storedValue, setValue];
 }
 type CanvasProps = {
@@ -36,6 +35,7 @@ const Canvas: FunctionComponent<CanvasProps> = ({ defaultBackground }) => {
     setBackground(background);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [background]);
+  
   type BackgroundComponent = FunctionComponent<{ 
     style?: CSSProperties | {
       position: 'fixed',
@@ -47,7 +47,7 @@ const Canvas: FunctionComponent<CanvasProps> = ({ defaultBackground }) => {
       backgroundColor: 'var(--background)',
       opacity: 1,
     } 
-  }>
+  }>;
   const BackgroundComponent: BackgroundComponent = index[background]?.el;
   const style: CSSProperties = {
     position: 'absolute', 
@@ -59,7 +59,7 @@ const Canvas: FunctionComponent<CanvasProps> = ({ defaultBackground }) => {
     backgroundColor: "hsla(var(--background), 0.25)",
     opacity: 1,
   };
-  return (
+  return background === -1 ? null : (
     <BackgroundComponent
       style={style}
     />

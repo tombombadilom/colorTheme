@@ -4,7 +4,7 @@ import {
   NavigationMenuLink,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 interface Link {
   name: string;
   link: string;
@@ -61,18 +61,18 @@ const Menu = (): ReactElement => (
     ))}
   </div>
 );
-export const TopMenu = () => (
+export const TopMenu = () =>{
+  const navigate = useNavigate();
+  return  (
   links.map((l: Link, index: number): ReactElement => (
     <NavigationMenuItem
       key={"m"+index }
     >
-      <Link key={"l" + index} to={l.link} >
-        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+      <NavigationMenuLink key={"l" + index} onClick={() => navigate(l.link)} className={navigationMenuTriggerStyle()}>
           {l.name}
-        </NavigationMenuLink>
-      </Link>
+      </NavigationMenuLink>
     </NavigationMenuItem>
   ))
-);
+)};
 
 export default Menu;

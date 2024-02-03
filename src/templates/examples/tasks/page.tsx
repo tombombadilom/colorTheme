@@ -12,8 +12,9 @@ const TasksPage = () => {
   const [tasks, setTasks] = useState<{ id: string; title: string; status: string; label: string; priority: string; }[]>([]);
   useEffect(() => {
     const getTasks = async () => {
-      const tasks = JSON.parse(data.toString())
-      setTasks(z.array(taskSchema).parse(tasks));
+ 
+      //const tasks = JSON.parse(data.toString());
+      setTasks(z.array(taskSchema).parse(data));
     };
     getTasks();
   }, []);
