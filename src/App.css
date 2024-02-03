@@ -4,81 +4,84 @@
  
 @layer base {
   :root {
-    opacity: 0.75;
-    --background: 210, 20%, 25%; /* Fond très foncé */
-    --foreground: 210, 15%, 85%; /* Texte clair pour contraste élevé */
-    --primary: 207, 90%, 50%; /* Bleu vif et saturé */
-    --secondary: 0, 0%, 55%; /* Gris plus clair pour contraste */
-    --accent: 140, 60%, 45%; /* Vert vif et saturé */
-    --card: 207, 90%, 48%; /* Fond de carte bleu */
-    --card-foreground: 210, 20%, 85%; /* Texte sur carte */
-    --popover: 140, 60%, 48%; /* Fond popover vert */
-    --popover-foreground: 210, 15%, 85%; /* Texte popover */
-    --primary-foreground: 207, 90%, 10%; /* Texte sur bleu */
-    --secondary-foreground: 0, 0%, 100%; /* Texte sur gris */
-    --tertiary: 207, 90%, 55%; /* Tertiaire bleu légèrement plus clair */
-    --tertiary-foreground: 207, 90%, 5%; /* Texte sur tertiaire */
-    --destructive: 0, 100%, 50%; /* Rouge pour éléments destructifs */
-    --destructive-foreground: 0, 0%, 100%; /* Texte sur rouge */
-    --muted: 207, 90%, 65%; /* Bleu atténué */
-    --muted-foreground: 210, 20%, 85%; /* Texte sur bleu atténué */
-    --border: 207, 90%, 45%; /* Bordure bleue */
-    --input: 207, 90%, 50%; /* Entrée de formulaire bleue */
-    --ring: 140, 60%, 45%; /* Focus vert */
+    --background: 210, 20%, 25%;
+    --foreground: 210, 15%, 85%;
+    --primary: 207, 90%, 50%;
+    --secondary: 0, 0%, 55%;
+    --accent: 140, 60%, 45%;
+    --card: 207, 90%, 48%;
+    --card-foreground: 210, 20%, 85%;
+    --popover: 140, 60%, 48%;
+    --popover-foreground: 210, 15%, 85%;
+    --primary-foreground: 207, 90%, 10%;
+    --secondary-foreground: 0, 0%, 100%;
+    --tertiary: 207, 90%, 55%;
+    --tertiary-foreground: 207, 90%, 5%;
+    --destructive: 0, 100%, 50%;
+    --destructive-foreground: 0, 0%, 100%;
+    --muted: 207, 90%, 65%;
+    --muted-foreground: 210, 20%, 85%;
+    --border: 207, 90%, 45%;
+    --input: 207, 90%, 50%;
+    --ring: 140, 60%, 45%;
     --radius: 0.5rem;
-    --primary-background: 207, 90%, 53%; /* Fond bleu principal */
-    --secondary-background: 0, 0%, 60%; /* Fond gris secondaire */
-    --tertiary-background: 140, 60%, 50%; /* Fond vert tertiaire */
-    --background-canvas: 210, 20%, 25%; /* Toile de fond */
+    --primary-background: 207, 90%, 53%;
+    --secondary-background: 0, 0%, 60%;
+    --tertiary-background: 140, 60%, 50%;
+    --background-canvas: 210, 20%, 25%;
     --nav-height: 10dvh;
-    --nav-background: 207, 80%, 50%; /* Fond de navigation bleu */
-    --nav-foreground: 210, 10%, 90%; /* Texte de navigation clair pour contraste élevé */
+    --nav-background: 207, 80%, 50%;
+    --nav-foreground: 210, 10%, 90%;
     --nav-height-mobile: 10dvh;
     --footer-height: 10dvh;
-    --footer-background: 207, 90%, 50%; /* Fond de pied de page bleu */
+    --footer-background: 207, 90%, 50%;
     --footer-height-mobile: 10dvh;
     --drawer-width: 40vw;
     --drawer-width-mobile: 90vw;
   }
  
   .dark {
-    --background: 210, 30%, 10%; /* Fond extrêmement foncé pour intimité */
-    --foreground: 210, 10%, 90%; /* Texte clair pour contraste élevé */
-    --primary: 207, 80%, 60%; /* Bleu vif légèrement plus clair pour mode sombre */
-    --secondary: 0, 0%, 50%; /* Gris moyen */
-    --accent: 140, 50%, 55%; /* Vert vif légèrement plus clair */
-    --card: 207, 80%, 15%; /* Fond de carte très foncé */
-    --card-foreground: 210, 10%, 90%; /* Texte clair sur carte */
-    --popover: 140, 50%, 20%; /* Fond popover vert foncé */
-    --popover-foreground: 210, 10%, 90%; /* Texte clair popover */
-    --primary-foreground: 207, 80%, 20%; /* Texte sur fond bleu foncé */
-    --secondary-foreground: 0, 0%, 90%; /* Texte clair sur gris */
-    --tertiary: 207, 80%, 65%; /* Tertiaire bleu plus clair */
-    --tertiary-foreground: 207, 80%, 10%; /* Texte sur tertiaire foncé */
-    --destructive: 0, 100%, 55%; /* Rouge vif pour éléments destructifs */
-    --destructive-foreground: 0, 0%, 90%; /* Texte clair sur rouge */
-    --muted: 207, 80%, 30%; /* Bleu atténué pour mode sombre */
-    --muted-foreground: 210, 10%, 90%; /* Texte clair sur bleu atténué */
-    --border: 207, 80%, 20%; /* Bordure bleue foncée */
-    --input: 207, 80%, 15%; /* Entrée de formulaire bleue foncée */
-    --ring: 140, 50%, 55%; /* Focus vert clair */
+    --background: 210, 30%, 10%;
+    --foreground: 210, 10%, 90%;
+    --primary: 207, 80%, 60%;
+    --secondary: 0, 0%, 50%;
+    --accent: 140, 50%, 55%;
+    --card: 207, 80%, 15%;
+    --card-foreground: 210, 10%, 90%;
+    --popover: 140, 50%, 20%;
+    --popover-foreground: 210, 10%, 90%;
+    --primary-foreground: 207, 80%, 20%;
+    --secondary-foreground: 0, 0%, 90%;
+    --tertiary: 207, 80%, 65%;
+    --tertiary-foreground: 207, 80%, 10%;
+    --destructive: 0, 100%, 55%;
+    --destructive-foreground: 0, 0%, 90%;
+    --muted: 207, 80%, 30%;
+    --muted-foreground: 210, 10%, 90%;
+    --border: 207, 80%, 20%;
+    --input: 207, 80%, 15%;
+    --ring: 140, 50%, 55%;
     --radius: 0.5rem;
-    --primary-background: 207, 80%, 18%; /* Fond bleu très foncé */
-    --secondary-background: 0, 0%, 15%; /* Fond gris très foncé */
-    --tertiary-background: 140, 50%, 20%; /* Fond vert très foncé */
-    --background-canvas: 210, 30%, 10%; /* Toile de fond extrêmement foncée */
+    --primary-background: 207, 80%, 18%;
+    --secondary-background: 0, 0%, 15%;
+    --tertiary-background: 140, 50%, 20%;
+    --background-canvas: 210, 30%, 10%;
     --nav-height: 10dvh;
-    --nav-background: 207, 80%, 15%; /* Fond de navigation bleu foncé */
-    --nav-foreground: 210, 10%, 90%; /* Texte de navigation clair pour contraste élevé */
+    --nav-background: 207, 80%, 15%;
+    --nav-foreground: 210, 10%, 90%;
     --nav-height-mobile: 10dvh;
     --footer-height: 10dvh;
-    --footer-background: 207, 80%, 15%; /* Fond de pied de page bleu foncé */
+    --footer-background: 207, 80%, 15%;
     --footer-height-mobile: 10dvh;
     --drawer-width: 40vw;
     --drawer-width-mobile: 90vw;
   }
 }
- 
+@layer components {
+  .border-border {
+    border: 1px solid #000;
+  }
+}
 @layer base {
   * {
     @apply border-border;
