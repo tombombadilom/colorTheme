@@ -1,9 +1,8 @@
-import React from "react";
+import React, { forwardRef } from 'react';
 
-import { forwardRef } from "react";
-import { Drawer as DrawerPrimitive } from "vaul";
+import { Drawer as DrawerPrimitive } from 'vaul';
 
-import { cn } from "../../lib/utils";
+import { cn } from '../../lib/utils';
 
 const DrawerTrigger = DrawerPrimitive.Trigger;
 
@@ -16,7 +15,7 @@ const DrawerContent = forwardRef<
     <DrawerPrimitive.Content
       ref={ref}
       className={cn(
-        "fixed inset-x-0 bottom-0 z-50 mt-24 h-[96%] rounded-t-[10px] bg-background",
+        'fixed inset-x-0 bottom-0 z-50 mt-24 h-[96%] rounded-t-[10px] bg-background',
         className,
       )}
       {...props}
@@ -26,6 +25,6 @@ const DrawerContent = forwardRef<
     </DrawerPrimitive.Content>
   </DrawerPrimitive.Portal>
 ));
-DrawerContent.displayName = "DrawerContent";
+DrawerContent.displayName = 'DrawerContent';
 
 export { DrawerTrigger, DrawerContent };

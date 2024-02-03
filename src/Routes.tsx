@@ -1,16 +1,16 @@
-import { lazy, Suspense } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-const Layout = lazy(() => import("./layout/Layout"));
-const Index = lazy(() => import("./templates/page"));
-const Mail = lazy(() => import("./templates/examples/mail/page"));
-const Dashboard = lazy(() => import("./templates/examples/dashboard/page"));
-const Cards = lazy(() => import("./templates/examples/cards/page"));
-const Tasks = lazy(() => import("./templates/examples/tasks/page"));
-const Playground = lazy(() => import("./templates/examples/playground/page"));
-const Forms = lazy(() => import("./templates/examples/forms/page"));
-const Music = lazy(() => import("./templates/examples/music/page"));
-const Authentication = lazy(() => import("./templates/examples/authentication/page"));
+const Layout = lazy(() => import('./layout/Layout'));
+const Index = lazy(() => import('./templates/page'));
+const Mail = lazy(() => import('./templates/examples/mail/page'));
+const Dashboard = lazy(() => import('./templates/examples/dashboard/page'));
+const Cards = lazy(() => import('./templates/examples/cards/page'));
+const Tasks = lazy(() => import('./templates/examples/tasks/page'));
+const Playground = lazy(() => import('./templates/examples/playground/page'));
+const Forms = lazy(() => import('./templates/examples/forms/page'));
+const Music = lazy(() => import('./templates/examples/music/page'));
+const Authentication = lazy(() => import('./templates/examples/authentication/page'));
 
 const MyRoutes = () => {
   return (

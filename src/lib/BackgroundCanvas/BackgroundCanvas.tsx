@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect, useRef, CSSProperties } from "react";
-import { useTheme, ThemeProviderState } from "../ThemeProvider";
+import React, { useCallback, useEffect, useRef, CSSProperties } from 'react';
+import { useTheme, ThemeProviderState } from '../ThemeProvider';
 
 interface CircleProps {
   radius: number;
@@ -51,7 +51,7 @@ class Circle {
     );
 
     context.closePath();
-    context.fillStyle = this.color + this.opacity + ")";
+    context.fillStyle = this.color + this.opacity + ')';
     context.fill();
   }
 }
@@ -84,11 +84,11 @@ function setupCircles(
 
     // Use CSS variables according to the color randomizer and the current mode (dark or light)
     if (colorRandomizer <= 40) {
-      color = `rgba(${isDarkMode ? style.getPropertyValue("--color-primary-dark") : style.getPropertyValue("--color-primary")},`;
+      color = `rgba(${isDarkMode ? style.getPropertyValue('--color-primary-dark') : style.getPropertyValue('--color-primary')},`;
     } else if (colorRandomizer <= 80) {
-      color = `rgba(${isDarkMode ? style.getPropertyValue("--color-secondary-dark") : style.getPropertyValue("--color-secondary")},`;
+      color = `rgba(${isDarkMode ? style.getPropertyValue('--color-secondary-dark') : style.getPropertyValue('--color-secondary')},`;
     } else {
-      color = `rgba(${isDarkMode ? style.getPropertyValue("--color-tertiary-dark") : style.getPropertyValue("--color-tertiary")},`;
+      color = `rgba(${isDarkMode ? style.getPropertyValue('--color-tertiary-dark') : style.getPropertyValue('--color-tertiary')},`;
       size /= 2;
       radius /= 2;
       opacity /= 2;
@@ -110,13 +110,13 @@ type BackgroundCanvasProps = {
   style?:
     | CSSProperties
     | {
-        position: "fixed";
+        position: 'fixed';
         top: 0;
         left: 0;
-        width: "100%";
-        height: "100%";
+        width: '100%';
+        height: '100%';
         zIndex: -1;
-        backgroundColor: "var(--background)";
+        backgroundColor: 'var(--background)';
         opacity: 1;
       };
 };
@@ -131,7 +131,7 @@ const BackgroundCanvas: React.FC<BackgroundCanvasProps> = ({ style }) => {
     const circles = circlesRef.current as Circle[];
 
     if (canvas) {
-      const context = canvas.getContext("2d");
+      const context = canvas.getContext('2d');
       if (context) {
         context.clearRect(0, 0, width, height);
         for (const circle of circles) {
@@ -162,15 +162,15 @@ const BackgroundCanvas: React.FC<BackgroundCanvasProps> = ({ style }) => {
       canvas.width = width;
       canvas.height = height;
 
-      const context = canvas.getContext("2d");
+      const context = canvas.getContext('2d');
       if (context) {
         setupCircles(circlesRef, width, height, theme);
         drawAndUpdate(width, height);
 
-        window.addEventListener("resize", handleResize);
+        window.addEventListener('resize', handleResize);
 
         return () => {
-          window.removeEventListener("resize", handleResize);
+          window.removeEventListener('resize', handleResize);
         };
       }
     }

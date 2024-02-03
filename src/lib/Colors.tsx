@@ -1,16 +1,16 @@
-import { useState, FC, useEffect, ChangeEvent } from "react";
-import { HslaColorPicker } from "react-colorful";
+import { useState, FC, useEffect, ChangeEvent } from 'react';
+import { HslaColorPicker } from 'react-colorful';
 import {
   createDynamicStyle,
   guessColorCategory,
   CalculatedColor,
   HSLA,
   calculateHarmoniousColors,
-} from "./ColorsTools";
+} from './ColorsTools';
 
-import { Card, CardTitle, CardContent, CardFooter } from "../components/ui/card";
-import { Input } from "../components/ui/input";
-import { Button } from "../components/ui/button";
+import { Card, CardTitle, CardContent, CardFooter } from '../components/ui/card';
+import { Input } from '../components/ui/input';
+import { Button } from '../components/ui/button';
 
 type Props = {
   color: CalculatedColor;
@@ -70,7 +70,7 @@ const PickColor: FC<Props> = ({ color, index, handleNewColor }: Props): JSX.Elem
 
   return (
     <Card
-      key={"c" + index}
+      key={'c' + index}
       className={`border-0 grow hover:grow-2 dynamic-bg-${index} bg-opacity-heavy backdrop-filter backdrop-blur-lg`}
     >
       <CardTitle>{color.colorName || color.name}</CardTitle>
@@ -151,7 +151,7 @@ const PickColor: FC<Props> = ({ color, index, handleNewColor }: Props): JSX.Elem
       </CardContent>
       <CardFooter className="flex justify-end gap-2 ">
         <Button className="flex-1" onClick={() => toggleShow(!show)}>
-          {!show ? "Set Color" : "Hide Color Picker"}
+          {!show ? 'Set Color' : 'Hide Color Picker'}
         </Button>
         <Button
           className="flex-1"
@@ -184,37 +184,37 @@ type HandleNewColor = (color: HSLA) => void;
 const Colors: FC = (): JSX.Element => {
   const [colors, updateColors] = useState([
     {
-      name: "primary",
-      colorName: "blue",
+      name: 'primary',
+      colorName: 'blue',
       h: 240,
       s: 100,
       l: 50,
       a: 1,
-      value: "hsla(240,100%,50%,1)",
+      value: 'hsla(240,100%,50%,1)',
     },
     {
-      name: "secondary",
-      colorName: "purple",
+      name: 'secondary',
+      colorName: 'purple',
       h: 300,
       s: 100,
       l: 50,
       a: 1,
-      value: "hsla(300,100%,50%,1)",
+      value: 'hsla(300,100%,50%,1)',
     },
     {
-      name: "tertiary",
-      colorName: "pink",
+      name: 'tertiary',
+      colorName: 'pink',
       h: 350,
       s: 100,
       l: 50,
       a: 1,
-      value: "hsla(350,100%,50%,1)",
+      value: 'hsla(350,100%,50%,1)',
     },
   ]);
 
   const [newTheme, setNewTheme] = useState<CalculatedColor[]>([]);
   useEffect(() => {
-    console.log("newTheme", newTheme);
+    console.log('newTheme', newTheme);
   }, [newTheme]);
 
   /**
@@ -264,9 +264,9 @@ const Colors: FC = (): JSX.Element => {
 
     updateColors(newColorsArray);
 
-    if (name === "primary") {
+    if (name === 'primary') {
       const harmoniousColors = calculateHarmoniousColors(h, s, l, a, name);
-      console.log("harmoniousColors", harmoniousColors);
+      console.log('harmoniousColors', harmoniousColors);
       if (harmoniousColors) setNewTheme(harmoniousColors);
     }
   };

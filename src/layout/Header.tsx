@@ -1,13 +1,13 @@
-import { ReactElement, ReactNode } from "react";
+import { ReactElement, ReactNode } from 'react';
 
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
-} from "@/components/ui/navigation-menu";
+} from '@/components/ui/navigation-menu';
 
-import ThemeSwitcher from "../lib/ThemeSwitcher";
-import { TopMenu } from "./Menu";
+import ThemeSwitcher from '../lib/ThemeSwitcher';
+import { TopMenu } from './Menu';
 type HeaderProps = {
   children: ReactNode;
   colorTheme: ReactElement;
@@ -21,7 +21,7 @@ const Header = ({ children, colorTheme }: HeaderProps): ReactElement => {
         <NavigationMenuItem>
           <ThemeSwitcher />
         </NavigationMenuItem>
-        <NavigationMenuItem key={"c" + 99}>{colorTheme}</NavigationMenuItem>
+        <NavigationMenuItem key={'c' + 99}>{colorTheme}</NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
   );

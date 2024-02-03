@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import { z } from "zod";
+import { useEffect, useState } from 'react';
+import { z } from 'zod';
 
-import { columns } from "./components/columns";
-import { DataTable } from "./components/data-table";
-import { UserNav } from "./components/user-nav";
-import { taskSchema } from "./data/schema";
-import data from "./data/tasks.json";
+import { columns } from './components/columns';
+import { DataTable } from './components/data-table';
+import { UserNav } from './components/user-nav';
+import { taskSchema } from './data/schema';
+import data from './data/tasks.json';
 
 const TasksPage = () => {
   const [tasks, setTasks] = useState<
@@ -59,7 +59,7 @@ const TasksPage = () => {
       </div>
     </>
   ) : (
-    "loading ..."
+    'loading ...'
   );
 };
 

@@ -1,10 +1,10 @@
-import { ReactElement } from "react";
+import { ReactElement } from 'react';
 import {
   NavigationMenuItem,
   NavigationMenuLink,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import { Link, useNavigate } from "react-router-dom";
+} from '@/components/ui/navigation-menu';
+import { Link, useNavigate } from 'react-router-dom';
 interface Link {
   name: string;
   link: string;
@@ -12,40 +12,40 @@ interface Link {
 
 const links: Link[] = [
   {
-    name: "Home",
-    link: "/",
+    name: 'Home',
+    link: '/',
   },
   {
-    name: "Mail",
-    link: "/Mail",
+    name: 'Mail',
+    link: '/Mail',
   },
   {
-    name: "Dashboard",
-    link: "/Dashboard",
+    name: 'Dashboard',
+    link: '/Dashboard',
   },
   {
-    name: "Cards",
-    link: "/Cards",
+    name: 'Cards',
+    link: '/Cards',
   },
   {
-    name: "Tasks",
-    link: "/Tasks",
+    name: 'Tasks',
+    link: '/Tasks',
   },
   {
-    name: "Playground",
-    link: "/Playground",
+    name: 'Playground',
+    link: '/Playground',
   },
   {
-    name: "Forms",
-    link: "/Forms",
+    name: 'Forms',
+    link: '/Forms',
   },
   {
-    name: "Music",
-    link: "/Music",
+    name: 'Music',
+    link: '/Music',
   },
   {
-    name: "Authentication",
-    link: "/Authentication",
+    name: 'Authentication',
+    link: '/Authentication',
   },
 ];
 
@@ -58,7 +58,7 @@ const Menu = (): ReactElement => (
   <div className="flex flex-col space-y-3">
     {links.map(
       (l: Link, index: number): ReactElement => (
-        <a key={"m" + index} href={l.link}>
+        <a key={'m' + index} href={l.link}>
           {l.name}
         </a>
       ),
@@ -69,9 +69,9 @@ export const TopMenu = () => {
   const navigate = useNavigate();
   return links.map(
     (l: Link, index: number): ReactElement => (
-      <NavigationMenuItem key={"m" + index}>
+      <NavigationMenuItem key={'m' + index}>
         <NavigationMenuLink
-          key={"l" + index}
+          key={'l' + index}
           onClick={() => navigate(l.link)}
           className={navigationMenuTriggerStyle()}
         >

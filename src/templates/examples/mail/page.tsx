@@ -1,9 +1,9 @@
-import Mail from "./components/mail";
-import { accounts, mails } from "./data";
+import Mail from './components/mail';
+import { accounts, mails } from './data';
 
 export default function MailPage() {
-  const layout = localStorage.getItem("react-resizable-panels:layout");
-  const collapsed = localStorage.getItem("react-resizable-panels:collapsed");
+  const layout = localStorage.getItem('react-resizable-panels:layout');
+  const collapsed = localStorage.getItem('react-resizable-panels:collapsed');
 
   const defaultLayout = layout ? JSON.parse(layout) : undefined;
   const defaultCollapsed = collapsed ? JSON.parse(collapsed) : undefined;

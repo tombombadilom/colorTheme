@@ -1,10 +1,10 @@
-import { lazy, ReactNode } from "react";
-import { Toaster } from "../components/ui/toaster";
+import { lazy, ReactNode } from 'react';
+import { Toaster } from '../components/ui/toaster';
 
 // import Jumbo from '../lib/BackgroundCanvas/Jumbo'
 // import Molten from '../lib/BackgroundCanvas/Molten';
-const Footer = lazy(() => import("./Footer"));
-const Sheet = lazy(() => import("./Sheet"));
+const Footer = lazy(() => import('./Footer'));
+const Sheet = lazy(() => import('./Sheet'));
 
 /**
  * Renders the layout component.

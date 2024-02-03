@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom";
-import { siteConfig } from "../examples/config/site";
-import { cn } from "../../lib/utils";
-import { CommandMenu } from "./command-menu";
-import { Icons } from "./icons";
-import { MainNav } from "./main-nav";
-import { MobileNav } from "./mobile-nav";
-import { ModeToggle } from "./mode-toggle";
-import { buttonVariants } from "@/components/ui/variant-button";
+import { Link } from 'react-router-dom';
+import { siteConfig } from '../examples/config/site';
+import { cn } from '../../lib/utils';
+import { CommandMenu } from './command-menu';
+import { Icons } from './icons';
+import { MainNav } from './main-nav';
+import { MobileNav } from './mobile-nav';
+import { ModeToggle } from './mode-toggle';
+import { buttonVariants } from '@/components/ui/variant-button';
 
 export function SiteHeader() {
   return (
@@ -23,22 +23,22 @@ export function SiteHeader() {
               <div
                 className={cn(
                   buttonVariants({
-                    variant: "ghost",
+                    variant: 'ghost',
                   }),
-                  "w-9 px-0",
+                  'w-9 px-0',
                 )}
               >
                 <Icons.gitHub className="h-4 w-4" />
                 <span className="sr-only">GitHub</span>
               </div>
             </Link>
-            <Link to={"/"} target="_blank" rel="noreferrer">
+            <Link to={'/'} target="_blank" rel="noreferrer">
               <div
                 className={cn(
                   buttonVariants({
-                    variant: "ghost",
+                    variant: 'ghost',
                   }),
-                  "w-9 px-0",
+                  'w-9 px-0',
                 )}
               >
                 <Icons.twitter className="h-3 w-3 fill-current" />

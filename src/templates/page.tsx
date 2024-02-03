@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import MailPage from "./examples/mail/page";
+import MailPage from './examples/mail/page';
 
 const IndexPage: React.FC = () => {
   return (

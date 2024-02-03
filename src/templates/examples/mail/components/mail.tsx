@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   AlertCircle,
   Archive,
@@ -11,24 +11,24 @@ import {
   ShoppingCart,
   Trash2,
   Users2,
-} from "lucide-react";
+} from 'lucide-react';
 
-import { AccountSwitcher } from "./account-switcher";
-import { MailDisplay } from "./mail-display";
-import { MailList } from "./mail-list";
-import { Nav } from "./nav";
-import { Mail } from "../data";
-import { useMail } from "../use-mail";
-import { cn } from "../../../../lib/utils";
-import { Separator } from "../../../../components/ui/separator";
-import { Input } from "../../../../components/ui/input";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../../components/ui/tabs";
-import { TooltipProvider } from "../../../../components/ui/tooltip";
+import { AccountSwitcher } from './account-switcher';
+import { MailDisplay } from './mail-display';
+import { MailList } from './mail-list';
+import { Nav } from './nav';
+import { Mail } from '../data';
+import { useMail } from '../use-mail';
+import { cn } from '../../../../lib/utils';
+import { Separator } from '../../../../components/ui/separator';
+import { Input } from '../../../../components/ui/input';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../../../components/ui/tabs';
+import { TooltipProvider } from '../../../../components/ui/tooltip';
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from "../../../../components/ui/resizable";
+} from '../../../../components/ui/resizable';
 
 interface MailProps {
   accounts: {
@@ -57,7 +57,7 @@ const MailComponent: React.FC<MailProps> = ({
       <ResizablePanelGroup
         direction="horizontal"
         onLayout={(sizes: number[]) => {
-          localStorage.setItem("react-resizable-panels:layout", `${JSON.stringify(sizes)}`);
+          localStorage.setItem('react-resizable-panels:layout', `${JSON.stringify(sizes)}`);
         }}
         className="h-full max-h-[800px] items-stretch"
       >
@@ -69,14 +69,14 @@ const MailComponent: React.FC<MailProps> = ({
           maxSize={20}
           onCollapse={() => {
             setIsCollapsed(!isCollapsed);
-            localStorage.setItem("react-resizable-panels:collapsed", JSON.stringify(isCollapsed));
+            localStorage.setItem('react-resizable-panels:collapsed', JSON.stringify(isCollapsed));
           }}
-          className={cn(isCollapsed && "min-w-[50px] transition-all duration-300 ease-in-out")}
+          className={cn(isCollapsed && 'min-w-[50px] transition-all duration-300 ease-in-out')}
         >
           <div
             className={cn(
-              "flex h-[52px] items-center justify-center",
-              isCollapsed ? "h-[52px]" : "px-2",
+              'flex h-[52px] items-center justify-center',
+              isCollapsed ? 'h-[52px]' : 'px-2',
             )}
           >
             <AccountSwitcher isCollapsed={isCollapsed} accounts={accounts} />
@@ -86,40 +86,40 @@ const MailComponent: React.FC<MailProps> = ({
             isCollapsed={isCollapsed}
             links={[
               {
-                title: "Inbox",
-                label: "128",
+                title: 'Inbox',
+                label: '128',
                 icon: Inbox,
-                variant: "default",
+                variant: 'default',
               },
               {
-                title: "Drafts",
-                label: "9",
+                title: 'Drafts',
+                label: '9',
                 icon: File,
-                variant: "ghost",
+                variant: 'ghost',
               },
               {
-                title: "Sent",
-                label: "",
+                title: 'Sent',
+                label: '',
                 icon: Send,
-                variant: "ghost",
+                variant: 'ghost',
               },
               {
-                title: "Junk",
-                label: "23",
+                title: 'Junk',
+                label: '23',
                 icon: ArchiveX,
-                variant: "ghost",
+                variant: 'ghost',
               },
               {
-                title: "Trash",
-                label: "",
+                title: 'Trash',
+                label: '',
                 icon: Trash2,
-                variant: "ghost",
+                variant: 'ghost',
               },
               {
-                title: "Archive",
-                label: "",
+                title: 'Archive',
+                label: '',
                 icon: Archive,
-                variant: "ghost",
+                variant: 'ghost',
               },
             ]}
           />
@@ -128,34 +128,34 @@ const MailComponent: React.FC<MailProps> = ({
             isCollapsed={isCollapsed}
             links={[
               {
-                title: "Social",
-                label: "972",
+                title: 'Social',
+                label: '972',
                 icon: Users2,
-                variant: "ghost",
+                variant: 'ghost',
               },
               {
-                title: "Updates",
-                label: "342",
+                title: 'Updates',
+                label: '342',
                 icon: AlertCircle,
-                variant: "ghost",
+                variant: 'ghost',
               },
               {
-                title: "Forums",
-                label: "128",
+                title: 'Forums',
+                label: '128',
                 icon: MessagesSquare,
-                variant: "ghost",
+                variant: 'ghost',
               },
               {
-                title: "Shopping",
-                label: "8",
+                title: 'Shopping',
+                label: '8',
                 icon: ShoppingCart,
-                variant: "ghost",
+                variant: 'ghost',
               },
               {
-                title: "Promotions",
-                label: "21",
+                title: 'Promotions',
+                label: '21',
                 icon: Archive,
-                variant: "ghost",
+                variant: 'ghost',
               },
             ]}
           />

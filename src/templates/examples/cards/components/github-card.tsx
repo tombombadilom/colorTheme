@@ -1,13 +1,13 @@
-import { ChevronDownIcon, CircleIcon, PlusIcon, StarIcon } from "@radix-ui/react-icons";
+import { ChevronDownIcon, CircleIcon, PlusIcon, StarIcon } from '@radix-ui/react-icons';
 
-import { Button } from "../../../../components/ui/button";
+import { Button } from '../../../../components/ui/button';
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../../../../components/ui/card";
+} from '../../../../components/ui/card';
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -16,8 +16,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../../../../components/ui/dropdown-menu";
-import { Separator } from "../../../../components/ui/separator";
+} from '../../../../components/ui/dropdown-menu';
+import { Separator } from '../../../../components/ui/separator';
 
 export function DemoGithub() {
   return (

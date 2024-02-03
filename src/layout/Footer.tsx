@@ -1,5 +1,5 @@
-import React, { ReactElement } from "react";
-import { Github, Twitter } from "lucide-react";
+import React, { ReactElement } from 'react';
+import { Github, Twitter } from 'lucide-react';
 
 const Footer: React.FC = (): ReactElement => {
   return (

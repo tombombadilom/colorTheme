@@ -1,10 +1,10 @@
-import React from "react";
-import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
-import { PopoverProps } from "@radix-ui/react-popover";
+import React from 'react';
+import { CaretSortIcon, CheckIcon } from '@radix-ui/react-icons';
+import { PopoverProps } from '@radix-ui/react-popover';
 
-import { cn } from "../../../../lib/utils";
-import { useMutationObserver } from "../../hooks/use-mutation-observer";
-import { Button } from "../../../../components/ui/button";
+import { cn } from '../../../../lib/utils';
+import { useMutationObserver } from '../../hooks/use-mutation-observer';
+import { Button } from '../../../../components/ui/button';
 import {
   Command,
   CommandEmpty,
@@ -12,16 +12,16 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "../../../../components/ui/command";
+} from '../../../../components/ui/command';
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "../../../../components/ui/hover-card";
-import { Label } from "../../../../components/ui/label";
-import { Popover, PopoverContent, PopoverTrigger } from "../../../../components/ui/popover";
+} from '../../../../components/ui/hover-card';
+import { Label } from '../../../../components/ui/label';
+import { Popover, PopoverContent, PopoverTrigger } from '../../../../components/ui/popover';
 
-import { Model, ModelType } from "../data/models";
+import { Model, ModelType } from '../data/models';
 
 interface ModelSelectorProps extends PopoverProps {
   types: readonly ModelType[];
@@ -53,7 +53,7 @@ export function ModelSelector({ models, types, ...props }: ModelSelectorProps) {
             aria-label="Select a model"
             className="w-full justify-between"
           >
-            {selectedModel ? selectedModel.name : "Select a model..."}
+            {selectedModel ? selectedModel.name : 'Select a model...'}
             <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
           </Button>
         </PopoverTrigger>
@@ -115,8 +115,8 @@ function ModelItem({ model, isSelected, onSelect, onPeek }: ModelItemProps) {
 
   useMutationObserver(ref, mutations => {
     for (const mutation of mutations) {
-      if (mutation.type === "attributes") {
-        if (mutation.attributeName === "aria-selected") {
+      if (mutation.type === 'attributes') {
+        if (mutation.attributeName === 'aria-selected') {
           onPeek(model);
         }
       }
@@ -131,7 +131,7 @@ function ModelItem({ model, isSelected, onSelect, onPeek }: ModelItemProps) {
       className="aria-selected:bg-primary aria-selected:text-primary-foreground"
     >
       {model.name}
-      <CheckIcon className={cn("ml-auto h-4 w-4", isSelected ? "opacity-100" : "opacity-0")} />
+      <CheckIcon className={cn('ml-auto h-4 w-4', isSelected ? 'opacity-100' : 'opacity-0')} />
     </CommandItem>
   );
 }

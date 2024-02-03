@@ -1,4 +1,4 @@
-import React, { useState, ReactNode } from "react";
+import React, { useState, ReactNode, lazy } from 'react';
 import {
   Sheet,
   SheetContent,
@@ -6,7 +6,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "../components/ui/sheet";
+} from '../components/ui/sheet';
 import {
   Drawer,
   DrawerClose,
@@ -16,15 +16,14 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "../components/ui/drawer";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
+} from '../components/ui/drawer';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 
-import { lazy } from "react";
-import { Menu, Palette } from "lucide-react";
-import SideMenu from "./Menu";
-import Header from "./Header";
-import { Button } from "@/components/ui/button";
-const Colors = lazy(() => import("../lib/Colors"));
+import { Menu, Palette } from 'lucide-react';
+import SideMenu from './Menu';
+import Header from './Header';
+import { Button } from '@/components/ui/button';
+const Colors = lazy(() => import('../lib/Colors'));
 /**
  * Renders the logo component.
  * @returns {ReactComponentElement<React.SVGProps<SVGSVGElement>>} The logo component.
@@ -37,7 +36,7 @@ type SheetProps = {
 const MySheet: React.FC<SheetProps> = ({ children }) => {
   const [sheetOpen, setSheetOpen] = useState<boolean>(false);
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
-  const side = "left";
+  const side = 'left';
   return (
     <Sheet
       open={sheetOpen}

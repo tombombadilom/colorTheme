@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import { TableOfContents } from "../../lib/toc";
-import { cn } from "../../lib/utils";
-import { useMounted } from "../examples/hooks/use-mounted";
+import { TableOfContents } from '../../lib/toc';
+import { cn } from '../../lib/utils';
+import { useMounted } from '../examples/hooks/use-mounted';
 
 interface TocProps {
   toc: TableOfContents;
@@ -16,11 +16,11 @@ export function DashboardTableOfContents({ toc }: TocProps) {
             .flatMap(item => [item.url, item?.items?.map(item => item.url)])
             .flat()
             .filter(Boolean)
-            .map(id => id?.split("#")[1])
+            .map(id => id?.split('#')[1])
         : [],
     [toc],
   );
-  const filteredItemIds = itemIds.filter((id): id is string => typeof id === "string");
+  const filteredItemIds = itemIds.filter((id): id is string => typeof id === 'string');
   const activeHeading = useActiveItem(filteredItemIds);
   const mounted = useMounted();
 
@@ -79,17 +79,17 @@ interface TreeProps {
 
 function Tree({ tree, level = 1, activeItem }: TreeProps) {
   return tree?.items?.length && level < 3 ? (
-    <ul className={cn("m-0 list-none", { "pl-4": level !== 1 })}>
+    <ul className={cn('m-0 list-none', { 'pl-4': level !== 1 })}>
       {tree.items.map((item, index) => {
         return (
-          <li key={index} className={cn("mt-0 pt-2")}>
+          <li key={index} className={cn('mt-0 pt-2')}>
             <a
               href={item.url}
               className={cn(
-                "inline-block no-underline transition-colors hover:text-foreground",
+                'inline-block no-underline transition-colors hover:text-foreground',
                 item.url === `#${activeItem}`
-                  ? "font-medium text-foreground"
-                  : "text-muted-foreground",
+                  ? 'font-medium text-foreground'
+                  : 'text-muted-foreground',
               )}
             >
               {item.title}

@@ -1,15 +1,15 @@
-import React, { useEffect, useRef, CSSProperties } from "react";
+import React, { useEffect, useRef, CSSProperties } from 'react';
 type CanvasBackgroundProps = {
   style?:
     | CSSProperties
     | {
-        position: "fixed";
+        position: 'fixed';
         top: 0;
         left: 0;
-        width: "100%";
-        height: "100%";
+        width: '100%';
+        height: '100%';
         zIndex: -1;
-        backgroundColor: "var(--background)";
+        backgroundColor: 'var(--background)';
       };
 };
 const CanvasBackground: React.FC<CanvasBackgroundProps> = ({ style }) => {
@@ -20,7 +20,7 @@ const CanvasBackground: React.FC<CanvasBackgroundProps> = ({ style }) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     const w = window.innerWidth;
@@ -29,7 +29,7 @@ const CanvasBackground: React.FC<CanvasBackgroundProps> = ({ style }) => {
     const arc = 100;
     const size = 7;
     const speed = 20;
-    const colors = ["red", "#f57900", "yellow", "#ce5c00", "#5c3566"];
+    const colors = ['red', '#f57900', 'yellow', '#ce5c00', '#5c3566'];
     const parts: {
       x: number;
       y: number;
@@ -111,10 +111,10 @@ const CanvasBackground: React.FC<CanvasBackgroundProps> = ({ style }) => {
     create();
     particles();
 
-    canvas.addEventListener("mousemove", handleMouseMove);
+    canvas.addEventListener('mousemove', handleMouseMove);
 
     return () => {
-      canvas.removeEventListener("mousemove", handleMouseMove);
+      canvas.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 

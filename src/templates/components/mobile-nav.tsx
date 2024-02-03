@@ -1,11 +1,11 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { cn } from "../../lib/utils";
-import { Icons } from "./icons";
-import { Button } from "../../components/ui/button";
-import { ScrollArea } from "../../components/ui/scroll-area";
-import { Sheet, SheetContent, SheetTrigger } from "../../components/ui/sheet";
-import { docsConfig } from "../examples/config/docs";
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { cn } from '../../lib/utils';
+import { Icons } from './icons';
+import { Button } from '../../components/ui/button';
+import { ScrollArea } from '../../components/ui/scroll-area';
+import { Sheet, SheetContent, SheetTrigger } from '../../components/ui/sheet';
+import { docsConfig } from '../examples/config/docs';
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false);
@@ -52,7 +52,7 @@ export function MobileNav() {
       <SheetContent side="left" className="pr-0">
         <MobileLink
           to="/"
-          onClick={() => navigate("/")}
+          onClick={() => navigate('/')}
           className="flex items-center"
           onOpenChange={setOpen}
         >
@@ -66,7 +66,7 @@ export function MobileNav() {
                   <MobileLink
                     key={index}
                     to={item.href}
-                    onClick={() => navigate("/" + item.href)}
+                    onClick={() => navigate('/' + item.href)}
                     onOpenChange={setOpen}
                   >
                     {item.title}
