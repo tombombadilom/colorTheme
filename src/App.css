@@ -2,91 +2,365 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Make sure to include the appropriate CSS Nesting Plugin before this line */
+
 @layer base {
-  :root {
-    --background: 210, 20%, 25%;
-    --foreground: 210, 15%, 85%;
-    --primary: 207, 90%, 50%;
-    --secondary: 0, 0%, 55%;
-    --accent: 140, 60%, 45%;
-    --card: 207, 90%, 48%;
-    --card-foreground: 210, 20%, 85%;
-    --popover: 140, 60%, 48%;
-    --popover-foreground: 210, 15%, 85%;
-    --primary-foreground: 207, 90%, 10%;
-    --secondary-foreground: 0, 0%, 100%;
-    --tertiary: 207, 90%, 55%;
-    --tertiary-foreground: 207, 90%, 5%;
-    --destructive: 0, 100%, 50%;
-    --destructive-foreground: 0, 0%, 100%;
-    --muted: 207, 90%, 65%;
-    --muted-foreground: 210, 20%, 85%;
-    --border: 207, 90%, 45%;
-    --input: 207, 90%, 50%;
-    --ring: 140, 60%, 45%;
-    --radius: 0.5rem;
-    --primary-background: 207, 90%, 53%;
-    --secondary-background: 0, 0%, 60%;
-    --tertiary-background: 140, 60%, 50%;
-    --background-canvas: 210, 20%, 25%;
+  /* Light theme styles */
+  html.light,
+  html[data-theme="light"],
+  :root[data-theme="light"],
+  .light {
+    --background: 210 20% 25%; /* Very dark background */
+    --foreground: 210 15% 85%; /* Bright text for high contrast */
+    --primary: 207 90% 50%; /* Vibrant and saturated blue */
+    --secondary: 0 0% 55%; /* Lighter gray for contrast */
+    --accent: 140 60% 45%; /* Vibrant and saturated green */
+    --card: 207 90% 48%; /* Blue card background */
+    --card-foreground: 210 20% 85%; /* Text on cards */
+    --popover: 140 60% 48%; /* Green popover background */
+    --popover-foreground: 210 15% 85%; /* Popover text */
+    --primary-foreground: 207 90% 10%; /* Text on blue */
+    --secondary-foreground: 0 0% 100%; /* Text on gray */
+    --tertiary: 207 90% 55%; /* Slightly lighter tertiary blue */
+    --tertiary-foreground: 207 90% 5%; /* Text on tertiary color */
+    --destructive: 0 100% 50%; /* Red for destructive elements */
+    --destructive-foreground: 0 0% 100%; /* Text on red */
+    --muted: 207 90% 65%; /* Muted blue */
+    --muted-foreground: 210 20% 85%; /* Text on muted blue */
+    --border: 207 90% 45%; /* Blue borders */
+    --input: 207 90% 50%; /* Blue form inputs */
+    --ring: 140 60% 45%; /* Green focus ring */
+    --radius: 0.5rem; /* Border radius */
+    --primary-background: 207 90% 53%; /* Main blue background */
+    --secondary-background: 0 0% 60%; /* Secondary gray background */
+    --tertiary-background: 140 60% 50%; /* Tertiary green background */
+    --background-canvas: 210 20% 25%; /* Canvas background */
     --nav-height: 10dvh;
-    --nav-background: 207, 80%, 50%;
-    --nav-foreground: 210, 10%, 90%;
+    --nav-background: 207 80% 50%; /* Blue navigation background */
+    --nav-foreground: 210 10% 90%; /* Light navigation text for high contrast */
     --nav-height-mobile: 10dvh;
     --footer-height: 10dvh;
-    --footer-background: 207, 90%, 50%;
+    --footer-background: 207 90% 50%; /* Blue footer background */
     --footer-height-mobile: 10dvh;
     --drawer-width: 40vw;
     --drawer-width-mobile: 90vw;
   }
 
-  .dark {
-    --background: 210, 30%, 10%;
-    --foreground: 210, 10%, 90%;
-    --primary: 207, 80%, 60%;
-    --secondary: 0, 0%, 50%;
-    --accent: 140, 50%, 55%;
-    --card: 207, 80%, 15%;
-    --card-foreground: 210, 10%, 90%;
-    --popover: 140, 50%, 20%;
-    --popover-foreground: 210, 10%, 90%;
-    --primary-foreground: 207, 80%, 20%;
-    --secondary-foreground: 0, 0%, 90%;
-    --tertiary: 207, 80%, 65%;
-    --tertiary-foreground: 207, 80%, 10%;
-    --destructive: 0, 100%, 55%;
-    --destructive-foreground: 0, 0%, 90%;
-    --muted: 207, 80%, 30%;
-    --muted-foreground: 210, 10%, 90%;
-    --border: 207, 80%, 20%;
-    --input: 207, 80%, 15%;
-    --ring: 140, 50%, 55%;
-    --radius: 0.5rem;
-    --primary-background: 207, 80%, 18%;
-    --secondary-background: 0, 0%, 15%;
-    --tertiary-background: 140, 50%, 20%;
-    --background-canvas: 210, 30%, 10%;
+  /* Dark theme styles */
+  html.dark,
+  html[data-theme="dark"],
+  :root[data-theme="dark"],
+ .dark {
+    --background: 210 30% 10%; /* Extremely dark background for privacy */
+    --foreground: 210 10% 90%; /* Bright text for high contrast */
+    --primary: 207 80% 60%; /* Slightly lighter vibrant blue for dark mode */
+    --secondary: 0 0% 50%; /* Medium gray */
+    --accent: 140 50% 55%; /* Slightly lighter vibrant green */
+    --card: 207 80% 15%; /* Very dark card background */
+    --card-foreground: 210 10% 90%; /* Bright card text */
+    --popover: 140 50% 20%; /* Dark green popover background */
+    --popover-foreground: 210 10% 90%; /* Bright popover text */
+    --primary-foreground: 207 80% 20%; /* Text on dark blue background */
+    --secondary-foreground: 0 0% 90%; /* Bright text on gray */
+    --tertiary: 207 80% 65%; /* Lighter tertiary blue */
+    --tertiary-foreground: 207 80% 10%; /* Text on dark tertiary */
+    --destructive: 0 100% 55%; /* Vibrant red for destructive elements */
+    --destructive-foreground: 0 0% 90%; /* Bright text on red */
+    --muted: 207 80% 30%; /* Muted blue for dark mode */
+    --muted-foreground: 210 10% 90%; /* Bright text on muted blue */
+    --border: 207 80% 20%; /* Dark blue borders */
+    --input: 207 80% 15%; /* Dark blue form inputs */
+    --ring: 140 50% 55%; /* Light green focus ring */
+    --radius: 0.5rem; /* Border radius */
+    --primary-background: 207 80% 18%; /* Very dark blue background */
+    --secondary-background: 0 0% 15%; /* Very dark gray background */
+    --tertiary-background: 140 50% 20%; /* Very dark green background */
+    --background-canvas: 210 30% 10%; /* Extremely dark canvas background */
     --nav-height: 10dvh;
-    --nav-background: 207, 80%, 15%;
-    --nav-foreground: 210, 10%, 90%;
+    --nav-background: 207 80% 15%; /* Dark blue navigation background */
+    --nav-foreground: 210 10% 90%; /* Bright navigation text for high contrast */
     --nav-height-mobile: 10dvh;
     --footer-height: 10dvh;
-    --footer-background: 207, 80%, 15%;
+    --footer-background: 207 80% 15%; /* Dark blue footer background */
     --footer-height-mobile: 10dvh;
     --drawer-width: 40vw;
     --drawer-width-mobile: 90vw;
   }
 }
-@layer components {
-  .border-border {
-    border: 1px solid #000;
+
+@media (prefers-color-scheme: light) {
+  :root {
+      --background: 210 20% 25%; /* Fond très foncé */
+      --foreground: 210 15% 85%; /* Texte clair pour contraste élevé */
+      --primary: 207 90% 50%; /* Bleu vif et saturé */
+      --secondary: 0 0% 55%; /* Gris plus clair pour contraste */
+      --accent: 140 60% 45%; /* Vert vif et saturé */
+      --card: 207 90% 48%; /* Fond de carte bleu */
+      --card-foreground: 210 20% 85%; /* Texte sur carte */
+      --popover: 140 60% 48%; /* Fond popover vert */
+      --popover-foreground: 210 15% 85%; /* Texte popover */
+      --primary-foreground: 207 90% 10%; /* Texte sur bleu */
+      --secondary-foreground: 0 0% 100%; /* Texte sur gris */
+      --tertiary: 207 90% 55%; /* Tertiaire bleu légèrement plus clair */
+      --tertiary-foreground: 207 90% 5%; /* Texte sur tertiaire */
+      --destructive: 0 100% 50%; /* Rouge pour éléments destructifs */
+      --destructive-foreground: 0 0% 100%; /* Texte sur rouge */
+      --muted: 207 90% 65%; /* Bleu atténué */
+      --muted-foreground: 210 20% 85%; /* Texte sur bleu atténué */
+      --border: 207 90% 45%; /* Bordure bleue */
+      --input: 207 90% 50%; /* Entrée de formulaire bleue */
+      --ring: 140 60% 45%; /* Focus vert */
+      --radius: 0.5rem;
+      --primary-background: 207 90% 53%; /* Fond bleu principal */
+      --secondary-background: 0 0% 60%; /* Fond gris secondaire */
+      --tertiary-background: 140 60% 50%; /* Fond vert tertiaire */
+      --background-canvas: 210 20% 25%; /* Toile de fond */
+      --nav-height: 10dvh;
+      --nav-background: 207 90% 50%; /* Fond de navigation bleu */
+      --nav-height-mobile: 10dvh;
+      --footer-height: 10dvh;
+      --footer-background: 207 90% 50%; /* Fond de pied de page bleu */
+      --footer-height-mobile: 10dvh;
+      --drawer-width: 40vw;
+      --drawer-width-mobile: 90vw;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+      --background: 210 30% 10%; /* Fond extrêmement foncé pour intimité */
+      --foreground: 210 10% 90%; /* Texte clair pour contraste élevé */
+      --primary: 207 80% 60%; /* Bleu vif légèrement plus clair pour mode sombre */
+      --secondary: 0 0% 50%; /* Gris moyen */
+      --accent: 140 50% 55%; /* Vert vif légèrement plus clair */
+      --card: 207 80% 15%; /* Fond de carte très foncé */
+      --card-foreground: 210 10% 90%; /* Texte clair sur carte */
+      --popover: 140 50% 20%; /* Fond popover vert foncé */
+      --popover-foreground: 210 10% 90%; /* Texte clair popover */
+      --primary-foreground: 207 80% 20%; /* Texte sur fond bleu foncé */
+      --secondary-foreground: 0 0% 90%; /* Texte clair sur gris */
+      --tertiary: 207 80% 65%; /* Tertiaire bleu plus clair */
+      --tertiary-foreground: 207 80% 10%; /* Texte sur tertiaire foncé */
+      --destructive: 0 100% 55%; /* Rouge vif pour éléments destructifs */
+      --destructive-foreground: 0 0% 90%; /* Texte clair sur rouge */
+      --muted: 207 80% 30%; /* Bleu atténué pour mode sombre */
+      --muted-foreground: 210 10% 90%; /* Texte clair sur bleu atténué */
+      --border: 207 80% 20%; /* Bordure bleue foncée */
+      --input: 207 80% 15%; /* Entrée de formulaire bleue foncée */
+      --ring: 140 50% 55%; /* Focus vert clair */
+      --radius: 0.5rem;
+      --primary-background: 207 80% 18%; /* Fond bleu très foncé */
+      --secondary-background: 0 0% 15%; /* Fond gris très foncé */
+      --tertiary-background: 140 50% 20%; /* Fond vert très foncé */
+      --background-canvas: 210 30% 10%; /* Toile de fond extrêmement foncée */
+      --nav-height: 10dvh;
+      --nav-background: 207 80% 15%; /* Fond de navigation bleu foncé */
+      --nav-height-mobile: 10dvh;
+      --footer-height: 10dvh;
+      --footer-background: 207 80% 15%; /* Fond de pied de page bleu foncé */
+      --footer-height-mobile: 10dvh;
+      --drawer-width: 40vw;
+      --drawer-width-mobile: 90vw;
+    }
+  }
+  html,body {
+    background-color: var(--background);
+    color: var(--primary-foreground);
+  }
+ 
+
+  button {
+    color: var(--primary-foreground);
+    border: 1px solid transparent;
+    background-color: var(--background);
+    transition: border-color 0.25s;
+  }
+  button:hover {
+    border-color: #646cff;
+  }
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+
+
+  html,body {
+    background-color: var(--background);
+    color: var(--primary-foreground);
+  }
+  
+  button {
+    color: var(--primary-foreground);
+    border: 1px solid transparent;
+    background-color: var(--background);
+    transition: border-color 0.25s;
+  }
+  button:hover {
+    border-color: #646cff;
+  }
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+
+@keyframes jumbo {
+    from {
+        background-position: 50% 50%, 50% 50%;
+    }
+    to {
+        background-position: 350% 50%, 350% 50%;
+    }
+}
+.btn-wrapper {
+  position: relative;
+}
+.btn-wrapper:hover .btn-bg {
+  filter: blur(10px);
+  transition: filter .4s ease-in;
+}
+.btn-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  background: linear-gradient(90deg, #FF8038 0%, #FF0099 30.43%, #00EBEB 68.23%, #DB00FF 100%);
+  background-size: 600% 600%;
+  border-radius: 50px;
+  animation: AnimateBorder 4s ease infinite;
+  -webkit-animation: AnimateBorder 4s ease infinite;
+  -moz-animation: AnimateBorder 4s ease infinite;
+  z-index: -1;
+  transform: translate(-2px, -2px);
+  transition: filter 1s ease-in;
+}
+@-webkit-keyframes AnimateBorder {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimateBorder {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimateBorder {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.gradient-border {
+  padding: 1.5em 4em;
+  position: relative;
+  border-radius: var('--radius');
+  z-index: 2;
+  display: inline-block;
+  box-sizing: border-box;
+  transition: 0.3s;
+  border: 4px solid green;  
+  border-image-source: linear-gradient(to right, #016062 0%, #4a5e8c 44%, #4a5e8c 49%, #4a5e8c 57%, #744a9e 100%);
+  border-image-slice: 4;
+  overflow: hidden;
+  &:hover{
+    color: #fff;
+    &:after{
+      width: 120%;
+    }
+  }
+  &:after {
+    position: absolute;
+    transition: 0.3s;
+    content: '';
+    width: 0;
+    bottom: -1px;
+    height: 3px;
+    background: linear-gradient(to right, #016062 0%, #4a5e8c 44%, #4a5e8c 49%, #4a5e8c 57%, #744a9e 100%);
+    height: 120%;
+    left: -10%;
+    border-radius: var('--radius');
+    transform: skewX(15deg);
+    z-index: -1;
   }
 }
-@layer base {
-  * {
-    @apply border-border;
+body {
+    background-color: var(--background);
+    color: var(--primary-foreground);
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+  .element {
+    background-color: var(--background);
+    color: var(--foreground);
   }
-  body {
-    @apply bg-background text-foreground;
+
+ #bgcanvas {
+  -webkit-filter: blur(35px);
+  filter: blur(35px);
+  position: absolute;
+  left: 5%;
+  top: 5%;
+  width: 90%;
+  height: 90%;
+}
+
+ button {
+    border-radius: 8px;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+ }
+
+
+:root:has(button:active) {
+	--size: 300px;
+}
+
+.loading #pulsar{
+  stroke-dasharray:281;
+  animation: dash 2.5s infinite linear forwards;
+  -webkit-animation: dash 2.5s infinite linear forwards;
+
+}
+.home {
+  background-image: url('assets/ipfs.png');
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment:fixed;
+  opacity: 0.80;
+}
+
+.loading #pulsar{
+  stroke-dasharray:281;
+  animation: dash 2.5s infinite linear forwards;
+  -webkit-animation: dash 2.5s infinite linear forwards;
+}
+/*Animation*/
+@-webkit-keyframes dash {
+  from {
+    stroke-dashoffset: 814;
+  }
+
+  to {
+    stroke-dashoffset: -814;
+  }
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 814;
+  }
+
+  to {
+    stroke-dashoffset: -814;
   }
 }
