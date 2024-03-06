@@ -2,7 +2,7 @@ import * as React from 'react';
 import { CheckIcon, PlusCircledIcon } from '@radix-ui/react-icons';
 import { Column } from '@tanstack/react-table';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../../../lib/utils';
 import { Badge } from '../../../../components/ui/badge';
 import { Button } from '../../../../components/ui/button';
 import {
@@ -39,17 +39,17 @@ export function DataTableFacetedFilter<TData, TValue>({
     <Popover>
       <PopoverTrigger asChild>
         <Button variant="outline" size="sm" className="h-8 border-dashed">
-          <PlusCircledIcon className="mr-2 h-4 w-4" />
+          <PlusCircledIcon className="mr-2 w-4 h-4" />
           {title}
           {selectedValues?.size > 0 && (
             <>
               <Separator orientation="vertical" className="mx-2 h-4" />
-              <Badge variant="secondary" className="rounded-sm px-1 font-normal lg:hidden">
+              <Badge variant="secondary" className="px-1 font-normal rounded-sm lg:hidden">
                 {selectedValues.size}
               </Badge>
               <div className="hidden space-x-1 lg:flex">
                 {selectedValues.size > 2 ? (
-                  <Badge variant="secondary" className="rounded-sm px-1 font-normal">
+                  <Badge variant="secondary" className="px-1 font-normal rounded-sm">
                     {selectedValues.size} selected
                   </Badge>
                 ) : (
@@ -59,7 +59,7 @@ export function DataTableFacetedFilter<TData, TValue>({
                       <Badge
                         variant="secondary"
                         key={option.value}
-                        className="rounded-sm px-1 font-normal"
+                        className="px-1 font-normal rounded-sm"
                       >
                         {option.label}
                       </Badge>
@@ -99,12 +99,12 @@ export function DataTableFacetedFilter<TData, TValue>({
                           : 'opacity-50 [&_svg]:invisible',
                       )}
                     >
-                      <CheckIcon className={cn('h-4 w-4')} />
+                      <CheckIcon className={cn('w-4 h-4')} />
                     </div>
-                    {option.icon && <option.icon className="mr-2 h-4 w-4 text-muted-foreground" />}
+                    {option.icon && <option.icon className="mr-2 w-4 h-4 text-muted-foreground" />}
                     <span>{option.label}</span>
                     {facets?.get(option.value) && (
-                      <span className="ml-auto flex h-4 w-4 items-center justify-center font-mono text-xs">
+                      <span className="flex justify-center items-center ml-auto w-4 h-4 font-mono text-xs">
                         {facets.get(option.value)}
                       </span>
                     )}

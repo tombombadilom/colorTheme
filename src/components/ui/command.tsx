@@ -4,7 +4,7 @@ import { Command as CommandPrimitive } from 'cmdk';
 import { Search } from 'lucide-react';
 
 import { cn } from '../../lib/utils';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent } from './dialog';
 
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,
@@ -13,7 +13,7 @@ const Command = React.forwardRef<
   <CommandPrimitive
     ref={ref}
     className={cn(
-      'flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground',
+      'flex overflow-hidden flex-col w-full h-full rounded-md bg-popover text-popover-foreground',
       className,
     )}
     {...props}
@@ -39,12 +39,12 @@ const CommandInput = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Input>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
 >(({ className, ...props }, ref) => (
-  <div className="flex items-center border-b px-3" cmdk-input-wrapper="">
-    <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />
+  <div className="flex items-center px-3 border-b" cmdk-input-wrapper="">
+    <Search className="mr-2 w-4 h-4 opacity-50 shrink-0" />
     <CommandPrimitive.Input
       ref={ref}
       className={cn(
-        'flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50',
+        'flex py-3 w-full h-11 text-sm bg-transparent rounded-md outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50',
         className,
       )}
       {...props}
@@ -60,7 +60,7 @@ const CommandList = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.List
     ref={ref}
-    className={cn('max-h-[300px] overflow-y-auto overflow-x-hidden', className)}
+    className={cn('overflow-y-auto overflow-x-hidden max-h-[300px]', className)}
     {...props}
   />
 ));
@@ -71,7 +71,7 @@ const CommandEmpty = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Empty>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Empty>
 >((props, ref) => (
-  <CommandPrimitive.Empty ref={ref} className="py-6 text-center text-sm" {...props} />
+  <CommandPrimitive.Empty ref={ref} className="py-6 text-sm text-center" {...props} />
 ));
 
 CommandEmpty.displayName = CommandPrimitive.Empty.displayName;

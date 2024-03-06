@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowDownIcon, ArrowUpIcon, CaretSortIcon, EyeNoneIcon } from '@radix-ui/react-icons';
 import { Column } from '@tanstack/react-table';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../../../lib/utils';
 import { Button } from '../../../../components/ui/button';
 import {
   DropdownMenu,
@@ -33,11 +33,11 @@ export function DataTableColumnHeader<TData, TValue>({
           <Button variant="ghost" size="sm" className="-ml-3 h-8 data-[state=open]:bg-accent">
             <span>{title}</span>
             {column.getIsSorted() === 'desc' ? (
-              <ArrowDownIcon className="ml-2 h-4 w-4" />
+              <ArrowDownIcon className="ml-2 w-4 h-4" />
             ) : column.getIsSorted() === 'asc' ? (
-              <ArrowUpIcon className="ml-2 h-4 w-4" />
+              <ArrowUpIcon className="ml-2 w-4 h-4" />
             ) : (
-              <CaretSortIcon className="ml-2 h-4 w-4" />
+              <CaretSortIcon className="ml-2 w-4 h-4" />
             )}
           </Button>
         </DropdownMenuTrigger>

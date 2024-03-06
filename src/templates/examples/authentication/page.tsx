@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 import { cn } from '../../../lib/utils';
-import { buttonVariants } from '@/components/ui/variant-button';
+import { buttonVariants } from '../../../components/ui/variant-button';
 import { UserAuthForm } from './components/user-auth-form';
 
 export default function AuthenticationPage() {
