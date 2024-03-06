@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '../../lib/utils';
 
@@ -21,7 +23,7 @@ export function DocsSidebarNav({ items }: DocsSidebarNavProps) {
     <div className="w-full">
       {items.map((item, index) => (
         <div key={index} className={cn('pb-4')}>
-          <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold">{item.title}</h4>
+          <h4 className="px-2 py-1 mb-1 text-sm font-semibold rounded-md">{item.title}</h4>
           {item?.items?.length && <DocsSidebarNavItems items={item.items} pathname={pathname} />}
         </div>
       ))}

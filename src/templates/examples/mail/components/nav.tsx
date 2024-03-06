@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { LucideIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '../../../../lib/utils';
@@ -34,11 +36,11 @@ export function Nav({ links, isCollapsed }: NavProps) {
                       'dark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white',
                   )}
                 >
-                  <link.icon className="h-4 w-4" />
+                  <link.icon className="w-4 h-4" />
                   <span className="sr-only">{link.title}</span>
                 </Link>
               </TooltipTrigger>
-              <TooltipContent side="right" className="flex items-center gap-4">
+              <TooltipContent side="right" className="flex gap-4 items-center">
                 {link.title}
                 {link.label && <span className="ml-auto text-muted-foreground">{link.label}</span>}
               </TooltipContent>
@@ -54,7 +56,7 @@ export function Nav({ links, isCollapsed }: NavProps) {
                 'justify-start',
               )}
             >
-              <link.icon className="mr-2 h-4 w-4" />
+              <link.icon className="mr-2 w-4 h-4" />
               {link.title}
               {link.label && (
                 <span

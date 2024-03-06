@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { zodResolver } from '@hookform/resolvers/zod';
 import { CalendarIcon, CaretSortIcon, CheckIcon } from '@radix-ui/react-icons';
 import { format } from 'date-fns';
@@ -117,11 +119,11 @@ export function AccountForm() {
                       )}
                     >
                       {field.value ? format(field.value, 'PPP') : <span>Pick a date</span>}
-                      <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                      <CalendarIcon className="ml-auto w-4 h-4 opacity-50" />
                     </Button>
                   </FormControl>
                 </PopoverTrigger>
-                <PopoverContent className="w-auto p-0" align="start">
+                <PopoverContent className="p-0 w-auto" align="start">
                   <Calendar
                     mode="single"
                     selected={field.value}
@@ -156,7 +158,7 @@ export function AccountForm() {
                       {field.value
                         ? languages.find(language => language.value === field.value)?.label
                         : 'Select language'}
-                      <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                      <CaretSortIcon className="ml-2 w-4 h-4 opacity-50 shrink-0" />
                     </Button>
                   </FormControl>
                 </PopoverTrigger>

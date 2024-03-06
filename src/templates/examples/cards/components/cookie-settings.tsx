@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Button } from '../../../../components/ui/button';
 import {
   Card,
@@ -18,7 +20,7 @@ export function DemoCookieSettings() {
         <CardDescription>Manage your LocalStorage settings here.</CardDescription>
       </CardHeader>
       <CardContent className="grid gap-6">
-        <div className="flex items-center justify-between space-x-2">
+        <div className="flex justify-between items-center space-x-2">
           <Label htmlFor="necessary" className="flex flex-col space-y-1">
             <span>Strictly Necessary</span>
             <span className="font-normal leading-snug text-muted-foreground">
@@ -27,7 +29,7 @@ export function DemoCookieSettings() {
           </Label>
           <Switch id="necessary" defaultChecked />
         </div>
-        <div className="flex items-center justify-between space-x-2">
+        <div className="flex justify-between items-center space-x-2">
           <Label htmlFor="functional" className="flex flex-col space-y-1">
             <span>Functional Cookies</span>
             <span className="font-normal leading-snug text-muted-foreground">
@@ -36,7 +38,7 @@ export function DemoCookieSettings() {
           </Label>
           <Switch id="functional" />
         </div>
-        <div className="flex items-center justify-between space-x-2">
+        <div className="flex justify-between items-center space-x-2">
           <Label htmlFor="performance" className="flex flex-col space-y-1">
             <span>Performance Cookies</span>
             <span className="font-normal leading-snug text-muted-foreground">

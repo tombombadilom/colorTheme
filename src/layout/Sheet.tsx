@@ -22,7 +22,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs'
 import { Menu, Palette } from 'lucide-react';
 import SideMenu from './Menu';
 import Header from './Header';
-import { Button } from '@/components/ui/button';
+import { Button } from '../components/ui/button';
 const Colors = lazy(() => import('../lib/Colors'));
 /**
  * Renders the logo component.
@@ -60,8 +60,8 @@ const MySheet: React.FC<SheetProps> = ({ children }) => {
             </DrawerTrigger>
           }
         >
-          <SheetTrigger className="w-12 h-12 bg-transparent  rounded-lg p-1 focus:bg-opacity-60 active:bg-opacity-75 dark:bg-transparent dark:bg-opacity-10 dark:hover:bg-opacity-60 dark:focus:bg-opacity-60 dark:active:bg-opacity-75">
-            <Menu className="w-full h-full bg-opacity-light text-nav-foreground dark:bg-opacity-light dark:text-nav-foreground backdrop-filter backdrop-blur-lg rounded-md " />
+          <SheetTrigger className="p-1 w-12 h-12 bg-transparent rounded-lg focus:bg-opacity-60 active:bg-opacity-75 dark:bg-transparent dark:bg-opacity-10 dark:hover:bg-opacity-60 dark:focus:bg-opacity-60 dark:active:bg-opacity-75">
+            <Menu className="w-full h-full rounded-md backdrop-filter backdrop-blur-lg bg-opacity-light text-nav-foreground dark:bg-opacity-light dark:text-nav-foreground" />
           </SheetTrigger>
         </Header>
         <div className="flex flex-col items-center justify-center min-h-[90dvh] overflow-y-auto text-align-center">
@@ -69,7 +69,7 @@ const MySheet: React.FC<SheetProps> = ({ children }) => {
         </div>
         <DrawerContent>
           <Tabs defaultValue="background" className="w-screen">
-            <TabsList className="w-screen flex-grow-0">
+            <TabsList className="flex-grow-0 w-screen">
               <TabsTrigger value="background">Background</TabsTrigger>
               <TabsTrigger value="colors">Colors</TabsTrigger>
             </TabsList>
@@ -115,7 +115,7 @@ const MySheet: React.FC<SheetProps> = ({ children }) => {
               alt="Helia IPFS CMS"
               className="mx-auto h-[150px] md:h-[100px]"
             />
-            <p className="mt-6 text-center text-1xl  text-gray-300">ColorTheme</p>
+            <p className="mt-6 text-center text-gray-300 text-1xl">ColorTheme</p>
           </SheetTitle>
           <SheetDescription>
             <div data-radix-scroll-area-viewport="" className="h-full w-full rounded-[inherit]">

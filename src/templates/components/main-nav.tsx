@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Link, useLocation } from 'react-router-dom';
 import { siteConfig } from '../examples/config/site';
 import { cn } from '../../lib/utils';
@@ -8,12 +10,12 @@ export function MainNav() {
   const pathname = location.pathname;
 
   return (
-    <div className="mr-4 hidden md:flex">
-      <Link to="/" className="mr-6 flex items-center space-x-2">
-        <Icons.logo className="h-6 w-6" />
+    <div className="hidden mr-4 md:flex">
+      <Link to="/" className="flex items-center mr-6 space-x-2">
+        <Icons.logo className="w-6 h-6" />
         <span className="hidden font-bold sm:inline-block">{siteConfig.name}</span>
       </Link>
-      <nav className="flex items-center gap-6 text-sm">
+      <nav className="flex gap-6 items-center text-sm">
         <Link
           to="/docs"
           className={cn(
@@ -53,7 +55,7 @@ export function MainNav() {
         <Link
           to={siteConfig.links.github}
           className={cn(
-            'hidden text-foreground/60 transition-colors hover:text-foreground/80 lg:block',
+            'hidden transition-colors text-foreground/60 hover:text-foreground/80 lg:block',
           )}
         >
           GitHub

@@ -1,10 +1,10 @@
-import { ReactElement, ReactNode } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
-} from '@/components/ui/navigation-menu';
+} from '../components/ui/navigation-menu';
 
 import ThemeSwitcher from '../lib/ThemeSwitcher';
 import { TopMenu } from './Menu';

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { ComponentProps } from 'react';
 import { formatDistanceToNow } from 'date-fns';
 
@@ -32,11 +34,11 @@ export function MailList({ items }: MailListProps) {
               })
             }
           >
-            <div className="flex w-full flex-col gap-1">
+            <div className="flex flex-col gap-1 w-full">
               <div className="flex items-center">
-                <div className="flex items-center gap-2">
+                <div className="flex gap-2 items-center">
                   <div className="font-semibold">{item.name}</div>
-                  {!item.read && <span className="flex h-2 w-2 rounded-full bg-blue-600" />}
+                  {!item.read && <span className="flex w-2 h-2 bg-blue-600 rounded-full" />}
                 </div>
                 <div
                   className={cn(
@@ -51,11 +53,11 @@ export function MailList({ items }: MailListProps) {
               </div>
               <div className="text-xs font-medium">{item.subject}</div>
             </div>
-            <div className="line-clamp-2 text-xs text-muted-foreground">
+            <div className="text-xs line-clamp-2 text-muted-foreground">
               {item.text.substring(0, 300)}
             </div>
             {item.labels.length ? (
-              <div className="flex items-center gap-2">
+              <div className="flex gap-2 items-center">
                 {item.labels.map(label => (
                   <Badge key={label} variant={getBadgeVariantFromLabel(label)}>
                     {label}

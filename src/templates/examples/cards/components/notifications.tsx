@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { BellIcon, EyeNoneIcon, PersonIcon } from '@radix-ui/react-icons';
 
 import {
@@ -16,22 +18,22 @@ export function DemoNotifications() {
         <CardDescription>Choose what you want to be notified about.</CardDescription>
       </CardHeader>
       <CardContent className="grid gap-1">
-        <div className="-mx-2 flex items-start space-x-4 rounded-md p-2 transition-all hover:bg-accent hover:text-accent-foreground">
-          <BellIcon className="mt-px h-5 w-5" />
+        <div className="flex items-start p-2 -mx-2 space-x-4 rounded-md transition-all hover:bg-accent hover:text-accent-foreground">
+          <BellIcon className="mt-px w-5 h-5" />
           <div className="space-y-1">
             <p className="text-sm font-medium leading-none">Everything</p>
             <p className="text-sm text-muted-foreground">Email digest, mentions & all activity.</p>
           </div>
         </div>
-        <div className="-mx-2 flex items-start space-x-4 rounded-md bg-accent p-2 text-accent-foreground transition-all">
-          <PersonIcon className="mt-px h-5 w-5" />
+        <div className="flex items-start p-2 -mx-2 space-x-4 rounded-md transition-all bg-accent text-accent-foreground">
+          <PersonIcon className="mt-px w-5 h-5" />
           <div className="space-y-1">
             <p className="text-sm font-medium leading-none">Available</p>
             <p className="text-sm text-muted-foreground">Only mentions and comments.</p>
           </div>
         </div>
-        <div className="-mx-2 flex items-start space-x-4 rounded-md p-2 transition-all hover:bg-accent hover:text-accent-foreground">
-          <EyeNoneIcon className="mt-px h-5 w-5" />
+        <div className="flex items-start p-2 -mx-2 space-x-4 rounded-md transition-all hover:bg-accent hover:text-accent-foreground">
+          <EyeNoneIcon className="mt-px w-5 h-5" />
           <div className="space-y-1">
             <p className="text-sm font-medium leading-none">Ignoring</p>
             <p className="text-sm text-muted-foreground">Turn off all notifications.</p>

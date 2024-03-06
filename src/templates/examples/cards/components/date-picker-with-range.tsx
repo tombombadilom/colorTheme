@@ -26,7 +26,7 @@ export default function DatePickerWithRange({ className }: React.HTMLAttributes<
               !date && 'text-muted-foreground',
             )}
           >
-            <CalendarIcon className="mr-2 h-4 w-4" />
+            <CalendarIcon className="mr-2 w-4 h-4" />
             {date?.from ? (
               date.to ? (
                 <>
@@ -40,7 +40,7 @@ export default function DatePickerWithRange({ className }: React.HTMLAttributes<
             )}
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-auto p-0" align="start">
+        <PopoverContent className="p-0 w-auto" align="start">
           <Calendar
             initialFocus
             mode="range"

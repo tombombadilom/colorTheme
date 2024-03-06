@@ -1,4 +1,4 @@
-import { useState, FC, useEffect, ChangeEvent } from 'react';
+import React, { useState, FC, useEffect, ChangeEvent } from 'react';
 import { HslaColorPicker } from 'react-colorful';
 import {
   createDynamicStyle,
@@ -71,7 +71,7 @@ const PickColor: FC<Props> = ({ color, index, handleNewColor }: Props): JSX.Elem
   return (
     <Card
       key={'c' + index}
-      className={`border-0 grow hover:grow-2 dynamic-bg-${index} bg-opacity-heavy backdrop-filter backdrop-blur-lg`}
+      className={`border-0 backdrop-filter backdrop-blur-lg grow hover:grow-2 dynamic-bg-${index} bg-opacity-heavy`}
     >
       <CardTitle>{color.colorName || color.name}</CardTitle>
       <CardContent className="min-h-[20dvh]">
@@ -149,7 +149,7 @@ const PickColor: FC<Props> = ({ color, index, handleNewColor }: Props): JSX.Elem
           </div>
         )}
       </CardContent>
-      <CardFooter className="flex justify-end gap-2 ">
+      <CardFooter className="flex gap-2 justify-end">
         <Button className="flex-1" onClick={() => toggleShow(!show)}>
           {!show ? 'Set Color' : 'Hide Color Picker'}
         </Button>

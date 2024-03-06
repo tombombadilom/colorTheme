@@ -1,3 +1,4 @@
+import React from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from '../../../../components/ui/avatar';
 import { Button } from '../../../../components/ui/button';
 import {
@@ -15,8 +16,8 @@ export function UserNav() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-          <Avatar className="h-9 w-9">
+        <Button variant="ghost" className="relative w-8 h-8 rounded-full">
+          <Avatar className="w-9 h-9">
             <AvatarImage src="/avatars/03.png" alt="@shadcn" />
             <AvatarFallback>SC</AvatarFallback>
           </Avatar>

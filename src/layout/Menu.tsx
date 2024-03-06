@@ -1,9 +1,9 @@
-import { ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import {
   NavigationMenuItem,
   NavigationMenuLink,
   navigationMenuTriggerStyle,
-} from '@/components/ui/navigation-menu';
+} from '../components/ui/navigation-menu';
 import { Link, useNavigate } from 'react-router-dom';
 interface Link {
   name: string;
