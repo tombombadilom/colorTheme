@@ -21,7 +21,7 @@ const Header = ({ children, colorTheme }: HeaderProps): ReactElement => {
         <NavigationMenuItem>
           <ThemeSwitcher />
         </NavigationMenuItem>
-        <NavigationMenuItem key={'c' + 99}>{colorTheme}</NavigationMenuItem>
+        <NavigationMenuItem key={'T' + 99}>{colorTheme}</NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
   );

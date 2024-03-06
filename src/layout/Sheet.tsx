@@ -1,4 +1,4 @@
-import React, { useState, ReactNode, lazy } from 'react';
+import React, { useState, useCallback, ReactNode, lazy } from 'react';
 import {
   Sheet,
   SheetContent,
@@ -34,33 +34,44 @@ type SheetProps = {
 };
 
 const MySheet: React.FC<SheetProps> = ({ children }) => {
-  const [sheetOpen, setSheetOpen] = useState<boolean>(false);
-  const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
+  const [state, setState] = useState({ sheetOpen: false, drawerOpen: false });
   const side = 'left';
+
+  const toggleSheet = useCallback((isOpen: boolean) => {
+    setState({ sheetOpen: isOpen, drawerOpen: !isOpen });
+  }, []);
+
+  const toggleDrawer = useCallback((isOpen: boolean) => {
+    setState({ sheetOpen: !isOpen, drawerOpen: isOpen });
+  }, []);
+
+
   return (
     <Sheet
-      open={sheetOpen}
-      onOpenChange={() => {
-        setSheetOpen(!sheetOpen);
-        setDrawerOpen?.(!sheetOpen);
-      }}
+      open={state.sheetOpen}
+      onOpenChange={(isOpen) => toggleSheet(isOpen)}
       key={side}
     >
       <Drawer
-        open={drawerOpen}
-        onOpenChange={() => {
-          setSheetOpen(!sheetOpen);
-          setDrawerOpen?.(!drawerOpen);
-        }}
+        key={"D99"}
+        open={state.drawerOpen}
+        onOpenChange={(isOpen) => toggleDrawer(isOpen)}
       >
         <Header
+          key={"H1"}
           colorTheme={
-            <DrawerTrigger>
+            <DrawerTrigger
+              key={"T99"}
+              onClick={() => toggleDrawer(!state.drawerOpen)}
+            >
               <Palette />
             </DrawerTrigger>
           }
         >
-          <SheetTrigger className="p-1 w-12 h-12 bg-transparent rounded-lg focus:bg-opacity-60 active:bg-opacity-75 dark:bg-transparent dark:bg-opacity-10 dark:hover:bg-opacity-60 dark:focus:bg-opacity-60 dark:active:bg-opacity-75">
+          <SheetTrigger
+            key={"S99"}
+            onClick={() => toggleSheet(!state.sheetOpen)}
+            className="p-1 w-12 h-12 bg-transparent rounded-lg focus:bg-opacity-60 active:bg-opacity-75 dark:bg-transparent dark:bg-opacity-10 dark:hover:bg-opacity-60 dark:focus:bg-opacity-60 dark:active:bg-opacity-75">
             <Menu className="w-full h-full rounded-md backdrop-filter backdrop-blur-lg bg-opacity-light text-nav-foreground dark:bg-opacity-light dark:text-nav-foreground" />
           </SheetTrigger>
         </Header>
