@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "jsx": "react",
+    "types": ["node"],
     "target": "es5",
     "module": "esnext",
     "useDefineForClassFields": true,
@@ -25,6 +26,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src","src/workers/glsl.d.ts" ],
+  "include": ["src","src/workers/glsl.d.ts", "global.d.ts", "jest-dom.ts" ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
