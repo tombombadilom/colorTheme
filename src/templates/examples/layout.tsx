@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 import { cn } from '../../lib/utils';
 import { Announcement } from '../components/announcement';
 import { ExamplesNav } from '../components/examples-nav';

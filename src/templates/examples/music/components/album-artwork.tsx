@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 import { PlusCircledIcon } from '@radix-ui/react-icons';
 
 import { cn } from '../../../../lib/utils';
@@ -13,7 +13,7 @@ import {
   ContextMenuTrigger,
 } from '../../../../components/ui/context-menu';
 
-import { Album } from '../data/albums';
+import type { Album } from '../data/albums';
 import { playlists } from '../data/playlists';
 
 interface AlbumArtworkProps extends React.HTMLAttributes<HTMLDivElement> {

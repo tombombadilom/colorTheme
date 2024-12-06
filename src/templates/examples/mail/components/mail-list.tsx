@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { ComponentProps } from 'react';
+import type { ComponentProps } from 'react';
 import { formatDistanceToNow } from 'date-fns';
 
 import { cn } from '../../../../lib/utils';
 import { Badge } from '../../../../components/ui/badge';
 import { ScrollArea } from '../../../../components/ui/scroll-area';
 
-import { Mail } from '../data';
+import type { Mail } from '../data';
 import { useMail } from '../use-mail';
 
 interface MailListProps {

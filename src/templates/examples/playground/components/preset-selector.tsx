@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CaretSortIcon, CheckIcon } from '@radix-ui/react-icons';
-import { PopoverProps } from '@radix-ui/react-popover';
+import type { PopoverProps } from '@radix-ui/react-popover';
 
 import { cn } from '../../../../lib/utils';
 import { Button } from '../../../../components/ui/button';
@@ -14,7 +14,7 @@ import {
 } from '../../../../components/ui/command';
 import { Popover, PopoverContent, PopoverTrigger } from '../../../../components/ui/popover';
 
-import { Preset } from '../data/presets';
+import type { Preset } from '../data/presets';
 
 interface PresetSelectorProps extends PopoverProps {
   presets: Preset[];

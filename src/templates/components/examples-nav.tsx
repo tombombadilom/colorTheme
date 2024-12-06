@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 

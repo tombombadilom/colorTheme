@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TableOfContents } from '../../lib/toc';
+import type { TableOfContents } from '../../lib/toc';
 import { cn } from '../../lib/utils';
 import { useMounted } from '../examples/hooks/use-mounted';
 

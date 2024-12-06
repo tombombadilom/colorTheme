@@ -1,5 +1,5 @@
 import React from 'react';
-import { SliderProps } from '@radix-ui/react-slider';
+import type { SliderProps } from '@radix-ui/react-slider';
 
 import {
   HoverCard,

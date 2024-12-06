@@ -1,10 +1,10 @@
-import React, { useState, FC, useEffect, ChangeEvent } from 'react';
+import React, { useState, type FC, useEffect, type ChangeEvent } from 'react';
 import { HslaColorPicker } from 'react-colorful';
 import {
   createDynamicStyle,
   guessColorCategory,
-  CalculatedColor,
-  HSLA,
+  type CalculatedColor,
+  type HSLA,
   calculateHarmoniousColors,
 } from './ColorsTools';
 
@@ -60,13 +60,13 @@ const PickColor: FC<Props> = ({ color, index, handleNewColor }: Props): JSX.Elem
   }, [hue, saturation, lightness, alpha]);
 
   const handleHueChange = (e: ChangeEvent<HTMLInputElement>) =>
-    setHue(parseInt(e.currentTarget.value, 10));
+    setHue(Number.parseInt(e.currentTarget.value, 10));
   const handleSaturationChange = (e: ChangeEvent<HTMLInputElement>) =>
-    setSaturation(parseInt(e.currentTarget.value, 10));
+    setSaturation(Number.parseInt(e.currentTarget.value, 10));
   const handleLightnessChange = (e: ChangeEvent<HTMLInputElement>) =>
-    setLightness(parseInt(e.currentTarget.value, 10));
+    setLightness(Number.parseInt(e.currentTarget.value, 10));
   const handleAlphaChange = (e: ChangeEvent<HTMLInputElement>) =>
-    setAlpha(parseFloat(e.currentTarget.value));
+    setAlpha(Number.parseFloat(e.currentTarget.value));
 
   return (
     <Card

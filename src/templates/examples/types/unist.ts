@@ -15,7 +15,7 @@ interface Point extends Node {
   offset: number;
 }
 
-interface Data {}
+type Data = {}
 
 export interface UnistNode extends Node {
   type: string;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { CaretSortIcon, CheckIcon } from '@radix-ui/react-icons';
-import { PopoverProps } from '@radix-ui/react-popover';
+import type { PopoverProps } from '@radix-ui/react-popover';
 
 import { cn } from '../../../../lib/utils';
 import { useMutationObserver } from '../../hooks/use-mutation-observer';
@@ -21,7 +21,7 @@ import {
 import { Label } from '../../../../components/ui/label';
 import { Popover, PopoverContent, PopoverTrigger } from '../../../../components/ui/popover';
 
-import { Model, ModelType } from '../data/models';
+import type { Model, ModelType } from '../data/models';
 
 interface ModelSelectorProps extends PopoverProps {
   types: readonly ModelType[];

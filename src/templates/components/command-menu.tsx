@@ -1,5 +1,5 @@
 import React from 'react';
-import { DialogProps } from '@radix-ui/react-alert-dialog';
+import type { DialogProps } from '@radix-ui/react-alert-dialog';
 import { CircleIcon, FileIcon, LaptopIcon, MoonIcon, SunIcon } from '@radix-ui/react-icons';
 import { useTheme } from '../../lib/ThemeProvider';
 import { useNavigate } from 'react-router-dom';

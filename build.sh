@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Parse command line arguments
-NODE=21
+NODE=23
 MODE="development"
 username="www-data"
 for i in "$@"

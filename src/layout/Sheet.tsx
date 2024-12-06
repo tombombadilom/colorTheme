@@ -1,4 +1,5 @@
-import React, { useState, useCallback, ReactNode, lazy, Suspense } from 'react';
+import type React from 'react';
+import { useState, useCallback, type ReactNode, lazy, Suspense } from 'react'
 // Import UI component types...
 import {
   Sheet,

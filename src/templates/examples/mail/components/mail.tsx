@@ -17,7 +17,7 @@ import { AccountSwitcher } from './account-switcher';
 import { MailDisplay } from './mail-display';
 import { MailList } from './mail-list';
 import { Nav } from './nav';
-import { Mail } from '../data';
+import type { Mail } from '../data';
 import { useMail } from '../use-mail';
 import { cn } from '../../../../lib/utils';
 import { Separator } from '../../../../components/ui/separator';
