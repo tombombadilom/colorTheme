@@ -1,48 +1,48 @@
 interface Node {
-  type: string;
-  data?: Data;
-  position?: Position;
+	type: string;
+	data?: Data;
+	position?: Position;
 }
 
 interface Position {
-  start: Point;
-  end: Point;
+	start: Point;
+	end: Point;
 }
 
 interface Point extends Node {
-  line: number;
-  column: number;
-  offset: number;
+	line: number;
+	column: number;
+	offset: number;
 }
 
-type Data = {}
+type Data = {};
 
 export interface UnistNode extends Node {
-  type: string;
-  name?: string;
-  tagName?: string;
-  value?: string;
-  properties?: {
-    __rawString__?: string;
-    __className__?: string;
-    __event__?: string;
-    [key: string]: unknown;
-  } & NpmCommands;
-  attributes?: {
-    name: string;
-    value: unknown;
-    type?: string;
-  }[];
-  children?: UnistNode[];
+	type: string;
+	name?: string;
+	tagName?: string;
+	value?: string;
+	properties?: {
+		__rawString__?: string;
+		__className__?: string;
+		__event__?: string;
+		[key: string]: unknown;
+	} & NpmCommands;
+	attributes?: {
+		name: string;
+		value: unknown;
+		type?: string;
+	}[];
+	children?: UnistNode[];
 }
 
 export interface UnistTree extends Node {
-  children: UnistNode[];
+	children: UnistNode[];
 }
 
 export interface NpmCommands {
-  __npmCommand__?: string;
-  __yarnCommand__?: string;
-  __pnpmCommand__?: string;
-  __bunCommand__?: string;
+	__npmCommand__?: string;
+	__yarnCommand__?: string;
+	__pnpmCommand__?: string;
+	__bunCommand__?: string;
 }
