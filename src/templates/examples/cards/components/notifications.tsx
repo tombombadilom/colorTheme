@@ -1,4 +1,3 @@
-import React from "react";
 
 import { BellIcon, EyeNoneIcon, PersonIcon } from "@radix-ui/react-icons";
 

@@ -1,4 +1,4 @@
-import React, { useState, type FC, useEffect, type ChangeEvent } from "react";
+import { useState, type FC, useEffect, type ChangeEvent } from "react";
 import { HslaColorPicker } from "react-colorful";
 import {
 	type CalculatedColor,

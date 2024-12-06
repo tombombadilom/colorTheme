@@ -1,4 +1,4 @@
-import React from "react";
+
 
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "../../lib/ThemeProvider";

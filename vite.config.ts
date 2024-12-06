@@ -1,11 +1,18 @@
 import replace from "@rollup/plugin-replace";
-import react from "@vitejs/plugin-react";
+import react from "@vitejs/plugin-react-swc"; // Changed from '@vitejs/plugin-react' to '@vitejs/plugin-react-swc'
 import { defineConfig } from "vite";
 import checker from "vite-plugin-checker";
 import glsl from "vite-plugin-glsl";
 import type { ManifestOptions, VitePWAOptions } from "vite-plugin-pwa";
 import { VitePWA } from "vite-plugin-pwa";
 import svgr from "vite-plugin-svgr";
+import type { PluginOption } from "vite";
+
+interface ReactOptions {
+	swc?: boolean;
+	// ... other properties if needed
+}
+
 /**
  * Generates the Vite configuration.
  * @param pwaOptions - The PWA options.
@@ -41,14 +48,31 @@ const generateConfig = (
 	return defineConfig({
 		build: {
 			sourcemap: process.env.SOURCE_MAP === "true",
+			rollupOptions: {
+				output: {
+					manualChunks(id) {
+						if (id.includes('node_modules')) {
+							return id.toString().split('node_modules/')[1].split('/')[0].toString(); // Split by package name
+						}
+						// Custom chunking logic
+						if (id.includes('src/components')) {
+							return 'components'; // Group all components into a single chunk
+						}
+						if (id.includes('src/utils')) {
+							return 'utils'; // Group all utils into a single chunk
+						}
+					},
+				},
+			},
+			chunkSizeWarningLimit: 600,
 		},
 		plugins: [
-			react({ swc: true }),
+			react({ swc: true }), // Changed from react() to react({ swc: true })
 			checker({ typescript: true }),
 			svgr(),
 			glsl() as unknown as PluginOption,
-			VitePWA(pwaOptions),
-			replace(replaceOptions),
+			VitePWA(pwaOptions) as unknown as PluginOption,
+			replace(replaceOptions) as unknown as PluginOption,
 		],
 	});
 };

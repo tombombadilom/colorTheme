@@ -1,4 +1,4 @@
-import React, { useEffect, lazy, Suspense } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import "./App.css";
 import { ErrorBoundary } from "./lib/ErrorBoundary";
 import { ThemeProvider, useTheme } from "./lib/ThemeProvider";

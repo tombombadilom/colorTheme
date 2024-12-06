@@ -1,5 +1,5 @@
 import { Moon, Sun } from "lucide-react";
-import React from "react";
+
 import {
 	Tooltip,
 	TooltipContent,

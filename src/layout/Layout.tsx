@@ -1,4 +1,4 @@
-import React, { lazy, type ReactNode } from "react";
+import  { lazy, type ReactNode } from "react";
 import { Toaster } from "../components/ui/toaster";
 
 // import Jumbo from '../lib/BackgroundCanvas/Jumbo'
